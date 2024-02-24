@@ -1,0 +1,118 @@
+<div
+  class="flex justify-center items-center sparkle-button mb-40 mt-20 rounded-2xl"
+>
+  <button class="rounded-2xl group">
+    <span class="spark rounded-2xl group"></span>
+
+    <span class="backdrop bg-green-600 group-hover:bg-green-500 rounded-2xl"></span>
+    
+    <span class="text rounded-2xl flex flex-row">
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      height="40px"
+      width="40px"
+      fill="currentColor"
+      ><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier">
+        <g id="Interface / Download">
+          <path
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+            stroke="#000"
+            d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+            id="Vector"></path>
+        </g>
+      </g></svg
+    >
+      <h5 class="ml-2">Download Played</h5>
+    </span>
+  </button>
+</div>
+
+<style>
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  :root {
+    --transition: 0.25s;
+    --spark: 1.8s;
+  }
+
+  body {
+    place-items: center;
+    overflow: hidden;
+  }
+
+  button {
+    --cut: 0.1em;
+    --active: 0;
+    background: #111;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    padding: 0.6em 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .spark {
+    position: absolute;
+    inset: 0;
+    rotate: 0deg;
+    overflow: hidden;
+    mask: linear-gradient(white, transparent 50%);
+    animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+  }
+
+  @keyframes flip {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  .spark:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    aspect-ratio: 1;
+    top: 0%;
+    left: 50%;
+    z-index: -1;
+    translate: -50% -15%;
+    rotate: 0;
+    transform: rotate(-90deg);
+    opacity: calc((var(--active)) + 0.8);
+    background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+    animation: rotate var(--spark) linear infinite both;
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: var(--cut);
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .text {
+    translate: 2% -6%;
+    letter-spacing: 0.01ch;
+    background: #111;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background var(--transition);
+  }
+</style>

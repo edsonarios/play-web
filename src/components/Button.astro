@@ -1,0 +1,82 @@
+<section class="flex justify-center mt-20">
+  <button class="button bg-green-600 rounded-2xl">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="-2.62 -2.62 92.565 92.834"
+      fill="#eee"
+      ><path
+        d="M0 12.402l35.687-4.86.016 34.422-35.67.203zM35.67 45.93l.028 34.453L.028 75.48.026 45.7zm4.326-39.025L87.315 0v41.527l-47.319.376zm47.33 39.349l-.011 41.34-47.319-6.679-.066-34.738z"
+      ></path></svg
+    >
+    Download Free
+  </button>
+</section>
+<style>
+  .button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #eee;
+    gap: 18px;
+    font-weight: bold;
+    outline: none;
+    overflow: hidden;
+    font-size: 30px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    transform: scale(1.05);
+  }
+
+  .button:hover .icon {
+    transform: translate(4px);
+  }
+
+  .button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+
+    60% {
+      left: 100%;
+    }
+
+    to {
+      left: 100%;
+    }
+  }
+</style>

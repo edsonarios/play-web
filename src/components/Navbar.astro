@@ -1,9 +1,69 @@
+---
+const navbarLinks = [
+  {
+    name: "Home",
+    href: "#",
+  },
+  {
+    name: "About",
+    href: "#",
+  },
+  {
+    name: "Services",
+    href: "#",
+  },
+  {
+    name: "Contact",
+    href: "#",
+  },
+];
+---
+
 <nav
-  class="top-0 w-full h-20 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
+  class="top-0 w-full h-24 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
 >
   <div
-    class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative"
+    class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-around items-center relative"
   >
-    Navbar
+    <a class="navbar-link flex h-full items-center">
+      <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4 flex" />
+      <h1>Played</h1>
+    </a>
+    <div class="flex h-full">
+      {
+        navbarLinks.map(({ name, href }) => {
+          return (
+            <a aria-label={name} href={href} class="navbar-link">
+              {name}
+            </a>
+          );
+        })
+      }
+    </div>
   </div>
 </nav>
+<style>
+  nav {
+    position: sticky;
+    top: 0px;
+    animation: adjust-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 400px;
+  }
+
+  @keyframes adjust-header {
+    to {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      font-size: 12px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+  .navbar-link {
+    @apply text-white lg:text-base text-2xl  leading-6 mr-4 ml-4   2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2;
+  }
+</style>
