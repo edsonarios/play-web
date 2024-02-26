@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
 import ButtonWindows from "../components/ButtonWindows.astro";
+import { OtherPlatforms } from "../components/OtherPlatforms.tsx";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -10,7 +11,9 @@ import Footer from "../components/Footer.astro";
 		<Navbar />
 		<Header />
 		<ButtonWindows />
+		<OtherPlatforms client:load />
 		<Footer />
 </Layout>
 
 <style></style>
+../components/OtherPlatforms.tsx
