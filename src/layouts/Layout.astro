@@ -55,4 +55,23 @@ const { title } = Astro.props;
       Courier New,
       monospace;
   }
+
+  #icon-animated {
+		fill-opacity: 0;
+		stroke-dasharray: 1300;
+		stroke-dashoffset: 1300;
+		animation: dash 1s ease-in forwards;
+	}
+
+	@keyframes dash {
+		70% {
+			fill-opacity: 0;
+		}
+
+		100% {
+			fill-opacity: 100%;
+			stroke-dashoffset: 0;
+			stroke-width: 1;
+		}
+	}
 </style>
