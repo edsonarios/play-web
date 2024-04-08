@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Windows, Mac, Download } from "../icons/Platforms";
 export function OtherPlatforms() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <section className="body-font">
       <div className="container px-5 mt-4 mx-auto">

@@ -5,6 +5,8 @@ import Header from "../components/Header.astro";
 import ButtonWindows from "../components/ButtonWindows.astro";
 import { OtherPlatforms } from "../components/OtherPlatforms.tsx";
 import Footer from "../components/Footer.astro";
+import TitleFeatures from "../components/TitleFeatures.astro";
+import { Features } from "../components/Features.tsx";
 ---
 
 <Layout title="Played Web">
@@ -12,5 +14,7 @@ import Footer from "../components/Footer.astro";
   <Header />
   <ButtonWindows />
   <OtherPlatforms client:load />
+  <TitleFeatures />
+  <Features client:load />
   <Footer />
 </Layout>
