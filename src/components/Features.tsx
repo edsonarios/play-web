@@ -80,13 +80,14 @@ export function Features() {
           />
         ))}
 
-        {isModalOpen !== -1 &&
-        <FeatureModal
-          src={features[isModalOpen].src}
-          title={features[isModalOpen].title}
-          description={features[isModalOpen].description}
-          onClose={() => setIsModalOpen(-1)}
-        />}
+        {isModalOpen !== -1 && (
+          <FeatureModal
+            src={features[isModalOpen].src}
+            title={features[isModalOpen].title}
+            description={features[isModalOpen].description}
+            onClose={() => setIsModalOpen(-1)}
+          />
+        )}
       </div>
     </section>
   );

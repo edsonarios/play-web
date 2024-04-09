@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { flushSync } from "react-dom";
 
 export default function FeatureModal({
   src,
@@ -15,7 +16,6 @@ export default function FeatureModal({
   useEffect(() => {
     const handleKeyPress = (event: any) => {
       if (event.key === "Escape") {
-        console.log("close modal");
         onClose();
       }
     };
