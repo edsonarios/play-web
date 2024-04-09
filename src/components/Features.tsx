@@ -3,7 +3,7 @@ import { Feature } from "./Feature";
 import FeatureModal from "./FeatureModal";
 
 export function Features() {
-  const [isModalOpen, setIsModalOpen] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(-1);
   const features = [
     {
       title: "Create new Playlists",
@@ -80,12 +80,12 @@ export function Features() {
           />
         ))}
 
-        {isModalOpen !== 0 &&
+        {isModalOpen !== -1 &&
         <FeatureModal
           src={features[isModalOpen].src}
           title={features[isModalOpen].title}
           description={features[isModalOpen].description}
-          onClose={() => setIsModalOpen(0)}
+          onClose={() => setIsModalOpen(-1)}
         />}
       </div>
     </section>

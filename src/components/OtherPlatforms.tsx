@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Windows, Mac, Download } from "../icons/Platforms";
+import { Windows, Mac, Download, Linux } from "../icons/Platforms";
 export function OtherPlatforms() {
   const [open, setOpen] = useState(false);
   return (
@@ -62,11 +62,7 @@ export function OtherPlatforms() {
                 </div>
               </div>
               <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-                <img
-                  src="/linux-logo.png"
-                  width={60}
-                  className="animate-fade-in"
-                />
+                <Linux />
                 <div className="flex-grow mt-10">
                   <h2 className="text-lg title-font font-medium mb-3">Linux</h2>
                   <button className="mt-3 text-indigo-500 inline-flex items-center">
