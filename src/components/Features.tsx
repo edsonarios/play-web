@@ -1,65 +1,14 @@
 import { useState } from "react";
 import { Feature } from "./Feature";
 import FeatureModal from "./FeatureModal";
+import { media } from "../utils/media";
 
 export function Features() {
   const [isModalOpen, setIsModalOpen] = useState(-1);
-  const features = [
-    {
-      title: "Create new Playlists",
-      src: "create-playlist.mp4",
-      description: "Create new playlists and add songs to them",
-      rowSpan: 2,
-      colSpan: 1,
-    },
-    {
-      title: "View songs in playlist",
-      src: "view-songs.mp4",
-      description: "View songs in a playlist and play them",
-      rowSpan: 2,
-      colSpan: 1,
-    },
-    {
-      title: "Reproduce song by dragging and dropping",
-      src: "reproduce-by-dd.mp4",
-      description: "Reproduce songs by dragging and dropping them",
-      rowSpan: 1,
-      colSpan: 2,
-    },
-
-    {
-      title: "Reproduce song by dragging and dropping",
-      src: "enter-playlist.mp4",
-      description: "Enter a playlist and view its songs",
-      rowSpan: 1,
-      colSpan: 2,
-    },
-    {
-      title: "View songs in playlist",
-      src: "view-songs.mp4",
-      descritpion: "View songs in a playlist and play them",
-      rowSpan: 2,
-      colSpan: 1,
-    },
-
-    {
-      title: "View songs in playlist",
-      src: "view-songs.mp4",
-      description: "View songs in a playlist and play them",
-      rowSpan: 2,
-      colSpan: 1,
-    },
-    {
-      title: "View songs in playlist",
-      src: "view-songs.mp4",
-      description: "View songs in a playlist and play them",
-      rowSpan: 2,
-      colSpan: 1,
-    },
-  ];
+  const features = media
   return (
-    <section className="mx-40 mt-10">
-      <div className="grid grid-cols-6 gap-8">
+    <section className="md:mx-20 xl:mx-40 mt-10">
+      <div className="grid 2xl:grid-cols-4 grid-cols-2 gap-8">
         {/* {[...Array(6)].map((_, i) => (
           <div
             key={i}
@@ -77,6 +26,7 @@ export function Features() {
             src={feature.src}
             rowSpan={feature.rowSpan}
             colSpan={feature.colSpan}
+            position={feature.position}
           />
         ))}
 
@@ -89,6 +39,13 @@ export function Features() {
           />
         )}
       </div>
+      <p className="mt-10">
+        <a
+          href="/docs"
+          className="text-blue-500 hover:underline"
+        />
+        You can discover more features in the documentation.
+      </p>
     </section>
   );
 }

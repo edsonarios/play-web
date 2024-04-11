@@ -8,6 +8,7 @@ export function Feature({
   src,
   rowSpan = 1,
   colSpan = 1,
+  position = "LEFT",
 }: {
   index: number;
   setKey: Dispatch<SetStateAction<number>>;
@@ -15,6 +16,7 @@ export function Feature({
   src: string;
   rowSpan?: number;
   colSpan?: number;
+  position?: "RIGHT" | "LEFT";
 }) {
   return (
     <div
@@ -24,24 +26,28 @@ export function Feature({
         document.startViewTransition(async () => {
           flushSync(() => {
             setKey(index);
-          })
-        })
+          });
+        });
       }}
     >
       <video
-        autoPlay
+        // autoPlay
         loop
         muted
         playsInline
-        className="rounded-lg h-full object-cover object-left group-hover:scale-105 transition-transform duration-300"
+        className={`rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300
+        ${position === "LEFT" ? "object-left" : "object-right"}
+        `}
+        onMouseEnter={(e) => e.currentTarget.play()}
+        onMouseLeave={(e) => e.currentTarget.pause()}
         style={{ viewTransitionName: `img-${src}` }}
       >
         <source src={`/media/${src}`} type="video/mp4" />
       </video>
-      <div className="absolute bottom-0 left-0 right-0 h-1/6 bg-gradient-to-t from-black to-transparent group-hover:opacity-0"></div>
-      <h2 className="absolute bottom-0 ml-2 mb-4 text-white group-hover:opacity-0">
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black to-transparent group-hover:opacity-0"></div>
+      <p className="absolute w-full bottom-0 mb-2 text-white group-hover:opacity-0 text-balance">
         {title}
-      </h2>
+      </p>
     </div>
   );
 }
