@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Windows, Mac, Download, Linux } from "../icons/Platforms";
 export function OtherPlatforms() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   return (
     <section className="body-font">
       <div className="container px-5 mt-4 mx-auto">
@@ -10,7 +10,7 @@ export function OtherPlatforms() {
             className="flex items-center sm:text-3xl font-medium title-font mb-4"
             onClick={() => setOpen(!open)}
           >
-            <h2 className="text-white text-base mr-4">Other Platforms</h2>
+            <h2 className="text-white text-base mr-4">Otras Plataformas</h2>
             <svg
               width="22"
               height="13"
@@ -45,7 +45,7 @@ export function OtherPlatforms() {
                   <h2 className="text-lg title-font font-medium mb-3">
                     Windows
                   </h2>
-                  <button className="mt-3 text-indigo-500 inline-flex items-center">
+                  <button className="mt-3 text-indigo-500 inline-flex items-center hover:scale-105 transition-all">
                     <h3 className="mr-4">64 Bit - Download</h3>
                     <Download />
                   </button>
@@ -55,7 +55,7 @@ export function OtherPlatforms() {
                 <Mac />
                 <div className="flex-grow mt-10">
                   <h2 className="text-lg title-font font-medium mb-3">Mac</h2>
-                  <button className="mt-3 text-indigo-500 inline-flex items-center">
+                  <button className="mt-3 text-indigo-500 inline-flex items-center hover:scale-105 transition-all">
                     <h3 className="mr-4">Universal - Download</h3>
                     <Download />
                   </button>
@@ -65,7 +65,7 @@ export function OtherPlatforms() {
                 <Linux />
                 <div className="flex-grow mt-10">
                   <h2 className="text-lg title-font font-medium mb-3">Linux</h2>
-                  <button className="mt-3 text-indigo-500 inline-flex items-center">
+                  <button className="mt-3 text-indigo-500 inline-flex items-center hover:scale-105 transition-all">
                     <h3 className="mr-4">64 Bit - Download</h3>
                     <Download />
                   </button>
