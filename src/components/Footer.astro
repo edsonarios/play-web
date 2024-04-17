@@ -3,6 +3,7 @@ import ButtonMac from "./ButtonMac.astro";
 import FacebookIcon from "../icons/FacebookIcon.astro";
 import TwitterIcon from "../icons/TwitterIcon.astro";
 import InstagramIcon from "../icons/InstagramIcon.astro";
+import { appName } from "../utils/constants";
 
 const footerData = [
   {
@@ -21,13 +22,15 @@ const footerData = [
     ],
   },
 ];
+// bg-slate-900
 ---
 
 <footer
-  class="text-white flex flex-col items-center justify-between mt-12 bg-slate-900 h-full bottom-0 w-full"
+  class="text-white flex flex-col items-center justify-between mt-12 bg-[#282a36] h-full bottom-0 w-full"
 >
   <img src="/icon-played.png" class="w-24 mt-8" />
-  <h3 class="mt-6 -mb-16 text-xl">Go on, give it a try</h3>
+  <!-- Go on, give it a try -->
+  <h3 class="mt-6 -mb-16 text-xl">Vamos, dale una oportunidad</h3>
   <ButtonMac />
 
   <div class="w-full pt-10 lg:pt-20 lg:pb-12 bg-customDarkBg1 radius-for-skewed ">
@@ -110,7 +113,7 @@ const footerData = [
       <p
         class="lg:text-center text-sm text-gray-100 border-t border-[rgb(255,255,255,0.2)] pt-12 mt-16 hidden lg:block"
       >
-        &copy; 2024 Played - MIT license.
+        &copy; 2024 {appName} - MIT license.
       </p>
     </div>
   </div>

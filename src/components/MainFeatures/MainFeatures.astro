@@ -1,4 +1,5 @@
 ---
+import { appName } from '../../utils/constants';
 import Section from './Section.astro';
 const mainFeatures = [
   {
@@ -21,8 +22,8 @@ const mainFeatures = [
 <script type="module" src="src/utils/aos.script.ts"></script>
 <section class='mt-40 text-center'>
   <!-- Title -->
-  <h2 class='mb-20 text-4xl text-balance'>
-    Explora y descubre todas las funcionalidades que <strong>Played</strong> puede
+  <h2 class='mb-20 text-6xl text-balance'>
+    Explora y descubre todas las funcionalidades que <strong>{appName}</strong> puede
     ofrecerte
   </h2>
   <!-- Features -->

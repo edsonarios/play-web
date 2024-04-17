@@ -1,4 +1,6 @@
 ---
+import { appName } from "../utils/constants";
+
 const navbarLinks = [
   {
     name: "Home",
@@ -27,7 +29,7 @@ const navbarLinks = [
   >
     <a class="navbar-link flex h-full items-center">
       <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4 flex" />
-      <h1>Played</h1>
+      <h1>{appName}</h1>
     </a>
     <div class="flex h-full">
       {
