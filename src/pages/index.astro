@@ -3,18 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
 import ButtonWindows from "../components/ButtonWindows.astro";
-import { OtherPlatforms } from "../components/OtherPlatforms.tsx";
 import Footer from "../components/Footer.astro";
-import { Features } from "../components/Features.tsx";
+import { Features } from "../components/Features/Features.tsx";
 import MainFeatures from "../components/MainFeatures/MainFeatures.astro";
+import OtherPlatforms from "../components/OtherPlatforms.astro";
 ---
 
 <Layout title="Played Web">
   <Navbar />
   <Header />
   <ButtonWindows />
-  <OtherPlatforms client:load />
+  <OtherPlatforms />
   <MainFeatures />
   <Features client:load />
   <Footer />
 </Layout>
+../components/Features/Features.tsx

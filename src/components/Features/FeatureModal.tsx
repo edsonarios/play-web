@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { flushSync } from "react-dom";
 
 export default function FeatureModal({
   src,

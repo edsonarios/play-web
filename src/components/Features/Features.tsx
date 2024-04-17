@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Feature } from "./Feature";
 import FeatureModal from "./FeatureModal";
-import { media } from "../utils/media";
+import { media } from "../../utils/media";
 
 export function Features() {
   const [isModalOpen, setIsModalOpen] = useState(-1);

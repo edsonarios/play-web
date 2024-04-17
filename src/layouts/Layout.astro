@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
 }
@@ -58,22 +58,48 @@ const { title } = Astro.props;
       monospace;
   }
 
-  #icon-animated {
-		fill-opacity: 0;
-		stroke-dasharray: 1300;
-		stroke-dashoffset: 1300;
-		animation: dash 1s ease-in forwards;
-	}
+  .icon-animated {
+    fill-opacity: 0;
+    stroke-dasharray: 1300;
+    stroke-dashoffset: 1300;
+    animation: dash 1s ease-in forwards;
+  }
 
-	@keyframes dash {
-		70% {
-			fill-opacity: 0;
-		}
+  @keyframes dash {
+    70% {
+      fill-opacity: 0;
+    }
 
-		100% {
-			fill-opacity: 100%;
-			stroke-dashoffset: 0;
-			stroke-width: 1;
-		}
-	}
+    100% {
+      fill-opacity: 100%;
+      stroke-dashoffset: 0;
+      stroke-width: 1;
+    }
+  }
 </style>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", function () {
+    const svgs = document.querySelectorAll(".icon-animated");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "none";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                entry.target.style.animation = "dash 1s ease-in forwards";
+              });
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    svgs.forEach((svg) => observer.observe(svg));
+  });
+</script>
