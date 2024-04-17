@@ -1,0 +1,13 @@
+---
+const { src } = Astro.props;
+---
+
+<video
+  autoplay
+  muted
+  playsinline
+  
+  onclick="this.paused ? this.play() : this.pause()"
+  class="rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300"
+  
+  src=`/media/${src}`></video>
