@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../Header.astro";
+import ButtonWindows from "../ButtonWindows.astro";
+import { Features } from "../Features/Features.tsx";
+import MainFeatures from "../MainFeatures/MainFeatures.astro";
+import OtherPlatforms from "../OtherPlatforms.astro";
+import VisitDocs from "../VisitDocs.astro";
+import Bg from "../Bg.astro";
+import Footer from "../Footer.astro";
+import { getI18N } from "../i18n/index.ts"
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+
+<Layout title={i18n.title}>
+  <Bg />
+  <Header />
+  <ButtonWindows />
+  <OtherPlatforms />
+  <MainFeatures />
+  <!-- <Features client:load /> -->
+  <VisitDocs />
+  <Footer />
+</Layout>

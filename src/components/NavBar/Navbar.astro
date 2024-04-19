@@ -1,34 +1,42 @@
 ---
 import { Download } from "../../icons/Platforms";
 import { appName } from "../../utils/constants";
+import { getI18N } from "../i18n"
+import SelectI18n from "../i18n/SelectI18n.astro";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "../i18n/utils";
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const navbarLinks = [
   {
-    name: "Home",
+    name: `${i18n.navBar.home}`,
     href: "/",
   },
   {
-    name: "Documentation",
+    name: `${i18n.navBar.documentation}`,
     href: "/docs",
   },
   {
-    name: "Licence",
+    name: `${i18n.navBar.licence}`,
     href: "#",
   },
   {
-    name: "Contact",
+    name: `${i18n.navBar.contact}`,
     href: "#",
   },
 ];
 ---
-
 <nav
   class="navbar top-0 w-full h-28 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
 >
   <div
     class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-around items-center relative"
   >
-    <a class="navbar-link flex h-full items-center" href="/">
+    <a class="navbar-link flex h-full items-center" href={translatePath('/')}>
       <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4" />
       <h1>{appName}</h1>
     </a>
@@ -36,19 +44,20 @@ const navbarLinks = [
       {
         navbarLinks.map(({ name, href }) => {
           return (
-            <a aria-label={name} href={href} class="navbar-link">
+            <a aria-label={name} href={translatePath(href)} class="navbar-link">
               {name}
             </a>
           );
         })
       }
+      <SelectI18n />
       <button
         class="flex items-center bg-green-600 p-1 rounded-md hover:scale-105 transition-transform"
       >
         <div class="px-1">
           <Download />
         </div>
-        <span><strong>Descarga gratis</strong></span>
+        <span><strong>{i18n.download}</strong></span>
       </button>
     </div>
   </div>

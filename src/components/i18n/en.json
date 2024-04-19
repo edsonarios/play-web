@@ -1,0 +1,14 @@
+{
+    "title": "Played",
+    "navBar": {
+        "home": "Home",
+        "documentation": "Documentation",
+        "licence": "Licence",
+        "contact": "Contact"
+    },
+    "header": {
+        "title": "Modern Music Player",
+        "subtitle": "Available for Windows, Mac y Linux"
+    },
+    "download": "Download for Free"
+}
