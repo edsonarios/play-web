@@ -1,21 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
 import Header from "../components/Header.astro";
 import ButtonWindows from "../components/ButtonWindows.astro";
-import Footer from "../components/Footer.astro";
 import { Features } from "../components/Features/Features.tsx";
 import MainFeatures from "../components/MainFeatures/MainFeatures.astro";
 import OtherPlatforms from "../components/OtherPlatforms.astro";
+import VisitDocs from "../components/VisitDocs.astro";
+import Bg from "../components/Bg.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Played Web">
-  <Navbar />
+  <Bg />
   <Header />
   <ButtonWindows />
   <OtherPlatforms />
   <MainFeatures />
   <!-- <Features client:load /> -->
+  <VisitDocs />
   <Footer />
 </Layout>
-../components/Features/Features.tsx

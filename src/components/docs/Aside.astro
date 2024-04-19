@@ -1,0 +1,57 @@
+---
+import { docFeatures } from "../../utils/docs";
+---
+<aside id="sidebar" class="bg-[#1d1e26]">
+  <ul class="list-none">
+    {
+      docFeatures.map(({ depth, title, slug, description }) => {
+        return (
+          <div class={`pb-2 ${description ? 'border-l-2 border-gray-500 hover:border-white' : ''}`}>
+            <li
+              data-id={slug}
+              class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
+              ${depth === 2 ? "ml-4" : ""}`}
+            >
+              <a class={`${description ? 'text-sm' : 'text-xl text-white'}`} href={`#${slug}`}>
+                {title}
+              </a>
+            </li>
+          </div>
+        );
+      })
+    }
+  </ul>
+</aside>
+<style>
+  #sidebar a.active {
+    /* color: #42c973; */
+  }
+  #sidebar li.active {
+    background-color: #42c973;
+    color: black;
+
+  }
+  aside#sidebar {
+    position: fixed;
+    flex-shrink: 0;
+    z-index: 50;
+    top: 0px;
+    padding-top: 30px;
+    padding-left: 30px;
+    width: 320px;
+    /* max-height: calc(100vh - 110px); */
+    max-height: calc(100vh);
+    overflow-y: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    animation: adjust-aside linear both;
+    animation-timeline: scroll();
+    animation-range: 0 400px;
+  }
+
+  @keyframes adjust-aside {
+    to {
+      /* max-height: calc(100vh - 40px); */
+    }
+  }
+</style>

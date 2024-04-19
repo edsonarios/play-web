@@ -1,17 +1,18 @@
 ---
-import { appName } from "../utils/constants";
+import { Download } from "../../icons/Platforms";
+import { appName } from "../../utils/constants";
 
 const navbarLinks = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
-    name: "About",
-    href: "#",
+    name: "Documentation",
+    href: "/docs",
   },
   {
-    name: "Services",
+    name: "Licence",
     href: "#",
   },
   {
@@ -22,13 +23,13 @@ const navbarLinks = [
 ---
 
 <nav
-  class="top-0 w-full h-24 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
+  class="navbar top-0 w-full h-28 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
 >
   <div
     class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-around items-center relative"
   >
-    <a class="navbar-link flex h-full items-center">
-      <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4 flex" />
+    <a class="navbar-link flex h-full items-center" href="/">
+      <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4" />
       <h1>{appName}</h1>
     </a>
     <div class="flex h-full">
@@ -41,6 +42,14 @@ const navbarLinks = [
           );
         })
       }
+      <button
+        class="flex items-center bg-green-600 p-1 rounded-md hover:scale-105 transition-transform"
+      >
+        <div class="px-1">
+          <Download />
+        </div>
+        <span><strong>Descarga gratis</strong></span>
+      </button>
     </div>
   </div>
 </nav>
@@ -56,13 +65,10 @@ const navbarLinks = [
   @keyframes adjust-header {
     to {
       background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
       font-size: 12px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-items: center;
+      height: 60px;
+      /* @apply border-b-2 border-gray-800; */
     }
   }
   .navbar-link {
