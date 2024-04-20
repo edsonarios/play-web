@@ -2,7 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/NavBar/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { getLangFromUrl } from "@/components/i18n/utils"
+import { getLangFromUrl } from "@/components/i18n/utils";
+
 interface Props {
   title: string;
 }
@@ -28,6 +29,7 @@ const lang = getLangFromUrl(Astro.url);
     <!-- <Footer /> -->
   </body>
 </html>
+
 <style is:global>
   :root {
     --accent: 136, 58, 234;
@@ -80,6 +82,11 @@ const lang = getLangFromUrl(Astro.url);
     }
   }
 </style>
+
+<script>
+  import { aosInit } from "../utils/aos.script";
+  aosInit();
+</script>
 
 <script type="module">
   document.addEventListener("DOMContentLoaded", function () {

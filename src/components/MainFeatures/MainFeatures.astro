@@ -1,42 +1,47 @@
 ---
-import { appName } from '../../utils/constants';
-import Section from './Section.astro';
+import { appName } from "../../utils/constants";
+import Section from "./Section.astro";
+
 const mainFeatures = [
   {
-    title: 'Reproduce toda tu musica',
-    description: 'Descrubre diferentes formas de reproducir tu musica favorita de manera facil y sencilla',
-    src: 'p-reproduce-by-dd.mp4'
+    title: "Reproduce toda tu musica",
+    description:
+      "Descrubre diferentes formas de reproducir tu musica favorita de manera facil y sencilla",
+    src: "p-reproduce-by-dd.mp4",
   },
   {
-    title: 'Todas tus playlists en un solo lugar',
-    description: 'Visualiza todas tus playlists de manera ordenada y sencilla',
-    src: 'p-enter-playlist.mp4'
+    title: "Todas tus playlists en un solo lugar",
+    description: "Visualiza todas tus playlists de manera ordenada y sencilla",
+    src: "p-enter-playlist.mp4",
   },
   {
-    title: 'Organiza tu musica como quieras',
-    description: 'Organiza tu musica de la manera que mas te guste y tenla siempre a la mano',
-    src: 'p-move-dd.mp4'
-  }
-]
+    title: "Organiza tu musica como quieras",
+    description:
+      "Organiza tu musica de la manera que mas te guste y tenla siempre a la mano",
+    src: "p-move-dd.mp4",
+  },
+];
 ---
-<script type="module" src="src/utils/aos.script.ts"></script>
-<section class='mt-40 text-center'>
+
+<section class="mt-40 text-center">
   <!-- Title -->
-  <h2 class='mb-20 text-6xl text-balance'>
+  <h2 class="mb-20 text-6xl text-balance">
     Explora y descubre todas las funcionalidades que <strong>{appName}</strong> puede
     ofrecerte
   </h2>
   <!-- Features -->
-  {mainFeatures.map((feature, index) => {
-    return (
-    <div data-aos={'fade-up'}>
-      <Section
-        index={index}
-        title={feature.title}
-        description={feature.description}
-        src={feature.src}
-      />
-    </div>
-    )
-  })}
+  {
+    mainFeatures.map((feature, index) => {
+      return (
+        <div data-aos={"fade-up"}>
+          <Section
+            index={index}
+            title={feature.title}
+            description={feature.description}
+            src={feature.src}
+          />
+        </div>
+      );
+    })
+  }
 </section>
