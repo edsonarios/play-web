@@ -1,7 +1,17 @@
+---
+import { getI18N } from "./i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
 <section class="text-center text-2xl text-balance">
   <p>
-    <div class="mb-4 text-4xl">Tenemos mas de <strong>50</strong> funcionalidades listos para ti</div>
-    <span>Mira a detalle todo aqui -></span>
-    <a class="text-blue-400" href="/docs">Docs</a>
+    <div class="mb-4 text-4xl">
+      {i18n.visitDocs.docs}
+      <strong>50</strong> {i18n.visitDocs.docs2}
+    </div>
+    <span>{i18n.visitDocs.visit} -></span>
+    <a class="text-blue-400" href="/docs">{i18n.visitDocs.documentation}</a>
   </p>
 </section>

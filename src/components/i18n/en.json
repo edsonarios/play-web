@@ -6,9 +6,40 @@
         "licence": "Licence",
         "contact": "Contact"
     },
+    "download": "Download for Free",
     "header": {
         "title": "Modern Music Player",
         "subtitle": "Available for Windows, Mac y Linux"
     },
-    "download": "Download for Free"
+    "otherPlatforms": {
+        "title": "Other Platforms",
+        "lastVersion": "Last Version: 1.0.0",
+        "download": "Download"
+    },
+    "mainFeatures": {
+        "title": "Explore and discover all the features that",
+        "title2": "can offer you",
+        "feature1": {
+            "title": "Play all your music",
+            "description": "Discover different ways to play your favorite music easily and simply"
+        },
+        "feature2": {
+            "title": "All your playlists in one place",
+            "description": "Visualize all your playlists in an orderly and simple way"
+        },
+        "feature3": {
+            "title": "Organize your music as you like it",
+            "description": "Organize your music the way you like it and always have it at hand"
+        }
+    },
+    "visitDocs": {
+        "docs": "We have more than ",
+        "docs2": "features ready for you",
+        "visit": "See all the features here",
+        "documentation": "Documentation"
+    },
+    "footer": {
+        "title": "Let's go, give it a try",
+        "socialMedias": "Social Media"
+    }
 }

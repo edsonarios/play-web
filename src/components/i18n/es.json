@@ -6,9 +6,40 @@
         "licence": "Licencia",
         "contact": "Contacto"
     },
+    "download": "Descarga Gratis",
     "header": {
         "title": "Moderno Reproductor de Música",
         "subtitle": "Disponible para Windows, Mac y Linux"
     },
-    "download": "Descarga Gratis"
+    "otherPlatforms": {
+        "title": "Otras Plataformas",
+        "lastVersion": "Última Versión: 1.0.0",
+        "download": "Descargar"
+    },
+    "mainFeatures": {
+        "title": "Explora y descrube todas las funcionalidades que",
+        "title2": "puede ofrecerte",
+        "feature1": {
+            "title": "Reproduce toda tu musica",
+            "description": "Descubre diferentes formas de reproducir tu música favorita de manera facil y sencilla"
+        },
+        "feature2": {
+            "title": "Todas tus listas de reproduccion en un solo lugar",
+            "description": "Visualiza todas tus listas de reproducción de manera ordenada y sencilla"
+        },
+        "feature3": {
+            "title": "Organiza tu musica como quieras",
+            "description": "Organiza tu musica de la manera que mas te guste y tenla siempre a la mano"
+        }
+    },
+    "visitDocs": {
+        "docs": "Tenemos mas de ",
+        "docs2": "funcionalidades listos para ti",
+        "visit": "Mira a detalle todo aqui",
+        "documentation": "Documentación"
+    },
+    "footer": {
+        "title": "Vamos, dale una oportunidad",
+        "socialMedias": "Redes Sociales"
+    }
 }

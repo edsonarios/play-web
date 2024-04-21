@@ -1,23 +1,24 @@
 ---
 import { appName } from "../../utils/constants";
+import { getI18N } from "../i18n";
 import Section from "./Section.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const mainFeatures = [
   {
-    title: "Reproduce toda tu musica",
-    description:
-      "Descrubre diferentes formas de reproducir tu musica favorita de manera facil y sencilla",
+    title: `${i18n.mainFeatures.feature1.title}`,
+    description: `${i18n.mainFeatures.feature1.description}`,
     src: "p-reproduce-by-dd.mp4",
   },
   {
-    title: "Todas tus playlists en un solo lugar",
-    description: "Visualiza todas tus playlists de manera ordenada y sencilla",
+    title: `${i18n.mainFeatures.feature2.title}`,
+    description: `${i18n.mainFeatures.feature2.description}`,
     src: "p-enter-playlist.mp4",
   },
   {
-    title: "Organiza tu musica como quieras",
-    description:
-      "Organiza tu musica de la manera que mas te guste y tenla siempre a la mano",
+    title: `${i18n.mainFeatures.feature3.title}`,
+    description: `${i18n.mainFeatures.feature3.description}`,
     src: "p-move-dd.mp4",
   },
 ];
@@ -26,8 +27,9 @@ const mainFeatures = [
 <section class="mt-40 text-center">
   <!-- Title -->
   <h2 class="mb-20 text-6xl text-balance">
-    Explora y descubre todas las funcionalidades que <strong>{appName}</strong> puede
-    ofrecerte
+    {i18n.mainFeatures.title}
+    <strong>{appName}</strong>
+    {i18n.mainFeatures.title2}
   </h2>
   <!-- Features -->
   {
