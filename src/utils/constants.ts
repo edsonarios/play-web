@@ -1,1 +1,1 @@
-export const appName = 'Played'
+export const appName = 'Play'

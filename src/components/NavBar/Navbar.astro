@@ -1,16 +1,16 @@
 ---
 import { Download } from "../../icons/Platforms";
 import { appName } from "../../utils/constants";
-import { getI18N } from "../i18n"
+import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "../i18n/utils";
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
+const { showLogo = true } = Astro.props;
 const navbarLinks = [
   {
     name: `${i18n.navBar.home}`,
@@ -30,16 +30,33 @@ const navbarLinks = [
   },
 ];
 ---
+
 <nav
-  class="navbar top-0 w-full h-28 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
+  class="navbar top-0 w-full h-24 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
 >
   <div
-    class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-around items-center relative"
+    class={`2xl:w-[1280px] xl:w-10/12 w-11/12 flex ${showLogo === true ? "justify-around" : "justify-end"}`}
   >
-    <a class="navbar-link flex h-full items-center" href={translatePath('/')}>
-      <img src="/icon-played.png" alt="played logo" class="w-8 h-8 mr-4" />
-      <h1>{appName}</h1>
-    </a>
+    {
+      showLogo === true && (
+        <a class="flex h-full place-self-center" href={translatePath("/")}>
+          <div class="relative w-80">
+            <img
+              src="/icon/iconPlay.png"
+              alt="played logo"
+              class="navIconPlay left-[127px] smaller-logo"
+              id="navbarLogo"
+            />
+            <img
+              src="/icon/eDevPlay.png"
+              alt="played logo"
+              class="navIconPlay left-0 original-logo"
+              id="navbarLogo"
+            />
+          </div>
+        </a>
+      )
+    }
     <div class="flex h-full">
       {
         navbarLinks.map(({ name, href }) => {
@@ -52,7 +69,7 @@ const navbarLinks = [
       }
       <SelectI18n />
       <button
-        class="flex items-center bg-green-600 p-1 rounded-md hover:scale-105 transition-transform"
+        class="flex items-center bg-green-600 px-1 rounded-md hover:scale-105 transition-transform h-10"
       >
         <div class="px-1">
           <Download />
@@ -77,10 +94,49 @@ const navbarLinks = [
       backdrop-filter: blur(10px);
       font-size: 12px;
       height: 60px;
-      /* @apply border-b-2 border-gray-800; */
+      box-shadow:
+        0px 5px 50px -5px rgba(172, 172, 172, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
     }
   }
   .navbar-link {
     @apply text-white lg:text-base text-2xl  leading-6 mr-4 ml-4   2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2;
   }
+
+  .navIconPlay {
+    @apply h-10 absolute top-0 hover:scale-105 transition-all ease-in-out duration-300;
+  }
+
+  .original-logo {
+    opacity: 1;
+    /* opacity: 0.1; */
+  }
+
+  .smaller-logo {
+    opacity: 0;
+    /* opacity: 0.5; */
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const originalLogo = document.querySelector(
+      ".original-logo"
+    ) as HTMLImageElement;
+    const smallLogo = document.querySelector(".smaller-logo") as HTMLElement;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        originalLogo.style.opacity = "0";
+        originalLogo.style.zIndex = "5";
+        smallLogo.style.opacity = "1";
+        smallLogo.style.zIndex = "10";
+      } else {
+        originalLogo.style.opacity = "1";
+        originalLogo.style.zIndex = "10";
+        smallLogo.style.opacity = "0";
+        smallLogo.style.zIndex = "5";
+      }
+    });
+  });
+</script>

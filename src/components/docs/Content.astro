@@ -1,9 +1,9 @@
 ---
-import { docFeatures } from "../../utils/docs";
+import { docFeatures } from "./features";
 import Footer from "../Footer.astro";
 ---
 
-<main class="content bg-zinc-900 pl-[350px] p-8 grow">
+<main class="content bg-zinc-900 pl-[350px] grow">
   {
     docFeatures.map(({ depth, title, slug, description, src }) => {
       return (

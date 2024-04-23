@@ -1,7 +1,20 @@
 ---
-import { docFeatures } from "../../utils/docs";
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import { docFeatures } from "./features";
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 <aside id="sidebar" class="bg-[#1d1e26]">
+  <a
+      class="flex h-full place-self-center mb-6"
+      href={translatePath("/")}
+    >
+      <img
+        src="/icon/eDevPlay.png"
+        alt="played logo"
+        class="navIconPlay h-10 hover:scale-105 transition-transform"
+      />
+    </a>
   <ul class="list-none">
     {
       docFeatures.map(({ depth, title, slug, description }) => {
@@ -38,7 +51,6 @@ import { docFeatures } from "../../utils/docs";
     padding-top: 30px;
     padding-left: 30px;
     width: 320px;
-    /* max-height: calc(100vh - 110px); */
     max-height: calc(100vh);
     overflow-y: auto;
     padding-bottom: 1rem;
@@ -47,10 +59,5 @@ import { docFeatures } from "../../utils/docs";
     animation-timeline: scroll();
     animation-range: 0 400px;
   }
-
-  @keyframes adjust-aside {
-    to {
-      /* max-height: calc(100vh - 40px); */
-    }
-  }
 </style>
+./docs./features
