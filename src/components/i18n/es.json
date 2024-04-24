@@ -17,25 +17,25 @@
         "download": "Descargar"
     },
     "mainFeatures": {
-        "title": "Explora y descrube todas las funcionalidades que",
+        "title": "Explora y descubre todas las funcionalidades que",
         "title2": "puede ofrecerte",
         "feature1": {
-            "title": "Reproduce toda tu musica",
-            "description": "Descubre diferentes formas de reproducir tu música favorita de manera facil y sencilla"
+            "title": "Reproduce toda tu música",
+            "description": "Descubre diferentes formas de reproducir tu música favorita de manera fácil y sencilla"
         },
         "feature2": {
-            "title": "Todas tus listas de reproduccion en un solo lugar",
+            "title": "Todas tus listas de reproducción en un solo lugar",
             "description": "Visualiza todas tus listas de reproducción de manera ordenada y sencilla"
         },
         "feature3": {
-            "title": "Organiza tu musica como quieras",
-            "description": "Organiza tu musica de la manera que mas te guste y tenla siempre a la mano"
+            "title": "Organiza tu música como quieras",
+            "description": "Organiza tu música de la manera que más te guste y tenla siempre a la mano"
         }
     },
     "visitDocs": {
-        "docs": "Tenemos mas de ",
-        "docs2": "funcionalidades listos para ti",
-        "visit": "Mira a detalle todo aqui",
+        "docs": "Tenemos más de ",
+        "docs2": "funcionalidades listas para ti",
+        "visit": "Mira a detalle todo aquí",
         "documentation": "Documentación"
     },
     "footer": {

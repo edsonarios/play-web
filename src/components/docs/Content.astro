@@ -14,9 +14,11 @@ import Footer from "../Footer.astro";
             {title}
           </h2>
           {description && (
-            <p class={`${depth === 2 ? "ml-8 text-gray-400" : ""} mb-6`}>
-              {description}
-            </p>
+            description.map((description) => (
+              <p class={`${depth === 2 ? "ml-8 text-gray-400" : ""} mb-6`}>
+                {description}
+              </p>
+            ))
           )}
           {src && (
             <video
