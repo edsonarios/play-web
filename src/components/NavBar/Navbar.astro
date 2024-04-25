@@ -18,7 +18,7 @@ const navbarLinks = [
   },
   {
     name: `${i18n.navBar.documentation}`,
-    href: "/docs",
+    href: "/docsMainMenu",
   },
   {
     name: `${i18n.navBar.licence}`,
@@ -124,7 +124,7 @@ const navbarLinks = [
       ".original-logo"
     ) as HTMLImageElement;
     const smallLogo = document.querySelector(".smaller-logo") as HTMLElement;
-
+    if (!originalLogo || !smallLogo) return;
     window.addEventListener("scroll", () => {
       if (window.scrollY > 80) {
         originalLogo.style.opacity = "0";

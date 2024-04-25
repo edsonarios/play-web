@@ -18,11 +18,11 @@ export const showDefaultLang = false;
 
 export const ui = {
 	es: {
-		'nav.inicio': 'Inicio',
+		// 'nav.inicio': 'Inicio',
 		'nav.docs': 'Vota',
 	},
 	en: {
-		'nav.inicio': 'Home',
+		// 'nav.inicio': 'Home',
 		'nav.docs': 'Vote',
 	},
 } as const;
@@ -30,10 +30,10 @@ export const ui = {
 export const routes = {
 	es: {
 		docs: 'docs',
-		info: 'info',
+		docsMainMenu: 'docsMainMenu',
 	},
 	en: {
 		docs: 'docs',
-		info: 'information',
+		docsMainMenu: 'docsMainMenu',
 	},
 };

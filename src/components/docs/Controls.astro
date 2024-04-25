@@ -1,10 +1,10 @@
 ---
-import { docsMainMenu } from "./features";
+import { docsControls } from "./features";
 ---
 
 <main class="content bg-zinc-900 pl-[350px] grow">
   {
-    docsMainMenu.map(({ depth, title, slug, description, src }) => {
+    docsControls.map(({ depth, title, slug, description, src }) => {
       return (
         <section id={slug} class="mb-16">
           <h2

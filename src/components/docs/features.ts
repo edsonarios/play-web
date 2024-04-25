@@ -6,7 +6,7 @@ export interface IDocFeatures {
   description?: string[];
 }
 
-export const docFeatures: IDocFeatures[] = [
+export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Menu Principal",
     depth: 1,
@@ -115,7 +115,9 @@ export const docFeatures: IDocFeatures[] = [
       "Además puedes añadir una o más nuevas listas de reproducción en una sección especifica, arrastrando y soltando una o más carpetas de canciones en la sección deseada",
     ],
   },
-  //! Main Body
+]
+
+export const docsMainBody: IDocFeatures[] = [
   {
     title: "Pantalla Principal",
     depth: 1,
@@ -271,6 +273,9 @@ export const docFeatures: IDocFeatures[] = [
       "Por ahora solo YouTube está disponible, pero se puede implementar nuevas aplicaciones de música en el futuro",
     ],
   },
+]
+
+export const docsControls: IDocFeatures[] = [
   {
     title: "Sección de Controles",
     depth: 1,
@@ -355,6 +360,9 @@ export const docFeatures: IDocFeatures[] = [
       "En modo de reproducción normal, puedes cambiar el modo de reproducción en modo teatro, para visualizar la canción casi en pantalla completa, sin visualizar las listas de reproducción ni los controles de reproducción",
     ],
   },
+]
+
+export const docsOptions: IDocFeatures[] = [
   {
     title: "Opciones de la aplicación",
     depth: 1,

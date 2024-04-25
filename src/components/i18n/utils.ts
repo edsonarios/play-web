@@ -18,18 +18,32 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 		const hasTranslation =
 			defaultLang !== l &&
 			(routes[l as keyof typeof routes] as Record<string, string>)[
-				pathName
+			pathName
 			] !== undefined;
 		const translatedPath = hasTranslation
 			? '/' +
-			  (routes[l as keyof typeof routes] as Record<string, string>)[
-					pathName
-			  ]
+			(routes[l as keyof typeof routes] as Record<string, string>)[
+			pathName
+			]
 			: path;
 
 		return !showDefaultLang && l === defaultLang
 			? translatedPath
 			: `/${l}${translatedPath}`;
+	};
+}
+
+export function useTranslatedPathDocs(lang: keyof typeof ui) {
+	return function translatePathDocs(path: string, route: string | undefined, docsSection: string) {
+		const actualRouteParse = route?.split('/').pop();
+		if (actualRouteParse === docsSection) {
+			return `#${path}`
+		}
+		if (lang === 'es') {
+			return `/${docsSection}#${path}`
+		} else {
+			return `/${lang}/${docsSection}#${path}`
+		}
 	};
 }
 

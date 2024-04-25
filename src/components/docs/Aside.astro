@@ -1,36 +1,54 @@
 ---
-import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
-import { docFeatures } from "./features";
+import { useTranslatedPath } from "../i18n/utils";
+import { getLangFromUrl, useTranslatedPathDocs } from "../i18n/utils";
+import {
+  docsMainMenu,
+  docsMainBody,
+  docsControls,
+  docsOptions,
+} from "./features";
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
+const translatePathDocs = useTranslatedPathDocs(lang);
+const docFeatures = {
+  docsMainMenu: [...docsMainMenu],
+  docsMainBody: [...docsMainBody],
+  docsControls: [...docsControls],
+  docsOptions: [...docsOptions],
+};
 ---
+
 <aside id="sidebar" class="bg-[#1d1e26]">
-  <a
-      class="flex h-full place-self-center mb-6"
-      href={translatePath("/")}
-    >
-      <img
-        src="/icon/eDevPlay.png"
-        alt="played logo"
-        class="navIconPlay h-10 hover:scale-105 transition-transform"
-      />
-    </a>
+  <a class="flex h-full place-self-center mb-6" href={translatePath("/")}>
+    <img
+      src="/icon/eDevPlay.png"
+      alt="played logo"
+      class="navIconPlay h-10 hover:scale-105 transition-transform"
+    />
+  </a>
   <ul class="list-none">
     {
-      docFeatures.map(({ depth, title, slug, description }) => {
-        return (
-          <div class={`pb-2 ${description ? 'border-l-2 border-gray-500 hover:border-white' : ''}`}>
-            <li
-              data-id={slug}
-              class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
-              ${depth === 2 ? "ml-4" : ""}`}
+      Object.entries(docFeatures).map(([docsSection, features]) => {
+        return features.map(({ depth, title, slug, description }) => {
+          return (
+            <div
+              class={`pb-2 ${description ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
             >
-              <a class={`${description ? 'text-sm' : 'text-xl text-white'}`} href={`#${slug}`}>
-                {title}
-              </a>
-            </li>
-          </div>
-        );
+              <li
+                data-id={slug}
+                class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
+              ${depth === 2 ? "ml-4" : ""}`}
+              >
+                <a
+                  class={`${description ? "text-sm" : "text-xl text-white"}`}
+                  href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
+                >
+                  {title}
+                </a>
+              </li>
+            </div>
+          );
+        });
       })
     }
   </ul>
@@ -60,4 +78,19 @@ const translatePath = useTranslatedPath(lang);
     animation-range: 0 400px;
   }
 </style>
-./docs./features
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentHash = window.location.hash;
+    const hashParse = currentHash.split("#").pop();
+
+    if (currentHash) {
+      const targetElement = document.querySelector(
+        `#sidebar li[data-id="${hashParse}"]`
+      );
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        targetElement.scrollIntoView({ block: "center" });
+      }
+    }
+  });
+</script>
