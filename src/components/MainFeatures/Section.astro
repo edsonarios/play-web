@@ -4,7 +4,7 @@ import Video from "./Video.astro"
 
 const {index, title, description, src} = Astro.props
 ---
-<section class="mb-44 mx-52">
+<section data-aos={"fade-up"} class="mb-44 mx-52">
   <div class="flex items-center">
     {index % 2 === 0 ? (
     <Description title={title} description={description}/>

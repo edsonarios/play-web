@@ -52,12 +52,13 @@ const navbarLinks = [
               alt="played logo"
               class="navIconPlay left-0 original-logo"
               id="navbarLogo"
+              transition:name="logo"
             />
           </div>
         </a>
       )
     }
-    <div class="flex h-full">
+    <div class="flex h-full" transition:name="navbar">
       {
         navbarLinks.map(({ name, href }) => {
           return (
@@ -119,7 +120,7 @@ const navbarLinks = [
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("astro:page-load", function () {
     const originalLogo = document.querySelector(
       ".original-logo"
     ) as HTMLImageElement;

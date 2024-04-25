@@ -24,6 +24,7 @@ const docFeatures = {
       src="/icon/eDevPlay.png"
       alt="played logo"
       class="navIconPlay h-10 hover:scale-105 transition-transform"
+      transition:name="logo"
     />
   </a>
   <ul class="list-none">
@@ -31,22 +32,22 @@ const docFeatures = {
       Object.entries(docFeatures).map(([docsSection, features]) => {
         return features.map(({ depth, title, slug, description }) => {
           return (
-            <div
-              class={`pb-2 ${description ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
+            <a
+              class={`${description ? "text-sm" : "text-xl text-white"}`}
+              href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
             >
-              <li
-                data-id={slug}
-                class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
-              ${depth === 2 ? "ml-4" : ""}`}
+              <div
+                class={`pb-2 ${description ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
               >
-                <a
-                  class={`${description ? "text-sm" : "text-xl text-white"}`}
-                  href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
+                <li
+                  data-id={slug}
+                  class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
+              ${depth === 2 ? "ml-4" : ""}`}
                 >
                   {title}
-                </a>
-              </li>
-            </div>
+                </li>
+              </div>
+            </a>
           );
         });
       })
@@ -54,9 +55,6 @@ const docFeatures = {
   </ul>
 </aside>
 <style>
-  #sidebar a.active {
-    /* color: #42c973; */
-  }
   #sidebar li.active {
     background-color: #42c973;
     color: black;
@@ -72,25 +70,26 @@ const docFeatures = {
     max-height: calc(100vh);
     overflow-y: auto;
     padding-bottom: 1rem;
-    scrollbar-width: thin;
     animation: adjust-aside linear both;
     animation-timeline: scroll();
     animation-range: 0 400px;
   }
 </style>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const currentHash = window.location.hash;
-    const hashParse = currentHash.split("#").pop();
+  // Scroll to aside active element
+  // document.addEventListener("astro:page-load", () => {
+  // document.addEventListener("DOMContentLoaded", () => {
+  // const currentHash = window.location.hash;
+  // const hashParse = currentHash.split("#").pop();
 
-    if (currentHash) {
-      const targetElement = document.querySelector(
-        `#sidebar li[data-id="${hashParse}"]`
-      );
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-        targetElement.scrollIntoView({ block: "center" });
-      }
-    }
-  });
+  // if (currentHash) {
+  //   const targetElement = document.querySelector(
+  //     `#sidebar li[data-id="${hashParse}"]`
+  //   );
+  //   if (targetElement) {
+  //     targetElement.scrollIntoView({ behavior: "smooth" });
+  //     targetElement.scrollIntoView({ block: "center" });
+  //   }
+  // }
+  // });
 </script>
