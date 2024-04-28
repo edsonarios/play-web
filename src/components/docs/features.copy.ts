@@ -244,7 +244,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Importar Listas de Reproducción",
     depth: 2,
-    slug: "p-import-playlists",
+    slug: "import-playlists",
     src: "p-import-playlists.mp4",
     description: [
       "Importa tus listas de reproducción favoritas de tu aplicación de música favorita",
@@ -264,8 +264,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Reproducción actual",
     depth: 2,
-    slug: "c-current-playback",
-    src: "c-current-playback.mp4",
+    slug: "current-playback",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Visualiza la canción que se está reproduciendo actualmente",
       "Además puedes hacer click en el nombre de la canción y se abrirá la lista de reproducción actual de la canción",
@@ -275,8 +275,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Controles de Reproducción",
     depth: 2,
-    slug: "c-playback-controls",
-    src: "c-playback-controls.mp4",
+    slug: "playback-controls",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Reproduce la canción seleccionada",
       "Además puedes pausar la canción seleccionada",
@@ -292,8 +292,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Volumen",
     depth: 2,
-    slug: "c-volume",
-    src: "c-volume.mp4",
+    slug: "volume",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Controla el volumen de la canción seleccionada",
       "También puedes usar las teclas de atajo 'Flecha arriba' para subir el volumen y 'Flecha abajo' para bajar el volumen",
@@ -304,8 +304,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Mostrar atajos de teclado",
     depth: 2,
-    slug: "c-show-shortcuts",
-    src: "c-show-shortcuts.mp4",
+    slug: "show-shortcuts",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Visualiza todos los atajos de teclado disponibles en la aplicación",
       "Además puedes ocultar los atajos de teclado con la tecla 'Esc' o haciendo click fuera del modal",
@@ -314,8 +314,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Cambiar velocidad de reproducción",
     depth: 2,
-    slug: "c-change-playback-speed",
-    src: "c-change-playback-speed.mp4",
+    slug: "change-playback-speed",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Cambia la velocidad de reproducción de la canción seleccionada",
       "Puedes cambiar la velocidad de reproducción de la canción seleccionada con las teclas de atajo '+' para subir la velocidad y '-' para bajar la velocidad",
@@ -324,8 +324,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Mostrar reproductor en miniatura",
     depth: 2,
-    slug: "c-show-pip-mode",
-    src: "c-show-pip-mode.mp4",
+    slug: "show-pip-mode",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "Cambia el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
       "También puedes manipular el reproductor en miniatura independientemente de la aplicación principal",
@@ -334,8 +334,8 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Reproductor en modo teatro",
     depth: 2,
-    slug: "c-show-theater-mode",
-    src: "c-show-theater-mode.mp4",
+    slug: "show-theater-mode",
+    src: "p-reproduce-by-dd.mp4",
     description: [
       "En modo de reproducción normal, puedes cambiar el modo de reproducción en modo teatro, para visualizar la canción casi en pantalla completa, sin visualizar las listas de reproducción ni los controles de reproducción",
     ],
@@ -351,8 +351,8 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Exportar configuración",
     depth: 2,
-    slug: "o-export-config",
-    src: "o-export-config.mp4",
+    slug: "export-config",
+    src: "p-export-config.mp4",
     description: [
       "Exporta la configuración actual de la aplicación",
       "Al exportar la configuración, se descargará un archivo json con la configuración actual de la aplicación",
@@ -362,8 +362,8 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Importar configuración",
     depth: 2,
-    slug: "o-import-config",
-    src: "o-import-config.mp4",
+    slug: "import-config",
+    src: "p-import-config.mp4",
     description: [
       "Importa la configuración de la aplicación",
       "Al importar la configuración, se abrirá un modal para seleccionar el archivo json con la configuración de la aplicación",
@@ -374,8 +374,8 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Actualizar aplicación",
     depth: 2,
-    slug: "o-update-app",
-    src: "o-update-app.mp4",
+    slug: "update-app",
+    src: "p-update-app.mp4",
     description: [
       "Actualiza la aplicación a la última versión disponible",
       "Al actualizar la aplicación, se descargará la última versión disponible y se instalará automáticamente",

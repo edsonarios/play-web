@@ -1,5 +1,5 @@
 {
-    "title": "Played",
+    "title": "Play",
     "navBar": {
         "home": "Home",
         "documentation": "Documentation",
@@ -25,7 +25,7 @@
         },
         "feature2": {
             "title": "All your playlists in one place",
-            "description": "Visualize all your playlists in an orderly and simple way"
+            "description": "View all your playlists, edit them as you wish in an orderly and simple way"
         },
         "feature3": {
             "title": "Organize your music as you like it",
@@ -41,5 +41,12 @@
     "footer": {
         "title": "Let's go, give it a try",
         "socialMedias": "Social Media"
+    },
+    "docsOptions": {
+        "appOptions": {
+            "title": "Options from aplication",
+            "depth": 1,
+            "slug": "app-options"
+        }
     }
 }

@@ -1,5 +1,59 @@
 ---
-import { docsOptions } from "./features";
+import { getI18N } from "../i18n";
+import type { IDocFeatures } from "./features";
+
+// import { docsOptions } from "./features";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+// const mainFeatures = [
+//   {
+//     title: `${i18n.mainFeatures.feature1.title}`,
+//     description: `${i18n.mainFeatures.feature1.description}`,
+//     src: "feature-1.mp4",
+//   },
+// ]
+const docsOptions = [
+  {
+    title: `${i18n.docsOptions.appOptions.title}`,
+    depth: 1,
+    slug: "app-options",
+  },
+  {
+    title: "Exportar configuración",
+    depth: 2,
+    slug: "o-export-config",
+    src: "o-export-config.mp4",
+    description: [
+      "Exporta la configuración actual de la aplicación",
+      "Al exportar la configuración, se descargará un archivo json con la configuración actual de la aplicación",
+      "También incluirá las listas de reproducción y las canciones de las listas de reproducción",
+    ],
+  },
+  {
+    title: "Importar configuración",
+    depth: 2,
+    slug: "o-import-config",
+    src: "o-import-config.mp4",
+    description: [
+      "Importa la configuración de la aplicación",
+      "Al importar la configuración, se abrirá un modal para seleccionar el archivo json con la configuración de la aplicación",
+      "Al importar la configuración, se sobrescribirá la configuración actual de la aplicación",
+      "También sobrescribirá las listas de reproducción y las canciones de las listas de reproducción",
+    ],
+  },
+  {
+    title: "Actualizar aplicación",
+    depth: 2,
+    slug: "o-update-app",
+    src: "o-update-app.mp4",
+    description: [
+      "Actualiza la aplicación a la última versión disponible",
+      "Al actualizar la aplicación, se descargará la última versión disponible y se instalará automáticamente",
+    ],
+  }
+]
+
 ---
 
 <main class="content bg-zinc-900 pl-[350px] grow">

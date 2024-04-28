@@ -1,5 +1,5 @@
 {
-    "title": "Played",
+    "title": "Play",
     "navBar": {
         "home": "Inicio",
         "documentation": "Documentación",
@@ -25,7 +25,7 @@
         },
         "feature2": {
             "title": "Todas tus listas de reproducción en un solo lugar",
-            "description": "Visualiza todas tus listas de reproducción de manera ordenada y sencilla"
+            "description": "Visualiza todas tus listas de reproducción, editalas a placer de manera ordenada y sencilla"
         },
         "feature3": {
             "title": "Organiza tu música como quieras",
@@ -41,5 +41,378 @@
     "footer": {
         "title": "Vamos, dale una oportunidad",
         "socialMedias": "Redes Sociales"
+    },
+    "docsMainMenu": {
+        "main-menu": {
+            "title": "Menu Principal",
+            "depth": 1,
+            "slug": "main-menu"
+        },
+        "a-button-home": {
+            "title": "Botón 'Inicio'",
+            "depth": 2,
+            "slug": "a-button-home",
+            "src": "a-button-home.mp4",
+            "description": {
+                "1": "Cambia el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
+                "2": "Si presionas nuevamente el botón 'Inicio', volverás a ver nuevamente el reproducción de música"
+            }
+        },
+        "a-button-open-folder": {
+            "title": "Botón 'Abrir Carpeta'",
+            "depth": 2,
+            "slug": "a-button-open-folder",
+            "src": "a-button-open-folder.mp4",
+            "description": {
+                "1": "Abre la opción de añadir toda una carpeta de canciones, y las añade como una sola lista de reproducción",
+                "2": "También puedes usar la tecla de atajo 'O'"
+            }
+        },
+        "a-button-plus": {
+            "title": "Botón '+' de la sección de Librería",
+            "depth": 2,
+            "slug": "a-button-plus",
+            "src": "a-button-plus.mp4",
+            "description": {
+                "1": "Crea una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción"
+            }
+        },
+        "a-place-section-name": {
+            "title": "Lugar Nombre Sección",
+            "depth": 2,
+            "slug": "a-place-section-name",
+            "src": "a-place-section-name.mp4",
+            "description": {
+                "1": "Visualiza el nombre de la sección donde contiene todas las listas de reproducción",
+                "2": "Si se realiza doble click, se podrá cambiar el nombre de la sección, se confirma el nuevo nombre con la tecla 'Enter', pero si se presiona 'Esc' o se quita el focus se cancelará el modo edición",
+                "3": "También al posicionarte sobre el nombre de la sección, aparecerá el botón de '+' para crear una nueva lista de reproducción en esa sección",
+                "4": "Finalmente si se posiciona sobre la esquina superior izquierda aparecerá la opción de eliminar la sección, se eliminará todas las listas de reproducción de esa sección y también la sección, pero si en la sección se encuentra la lista de reproducción 'All Songs' no se eliminará la sección, pero si se vaciara el resto de listas de reproducción de esa sección"
+            }
+        },
+        "a-place-playlists": {
+            "title": "Lugar 'Listas de Reproducción'",
+            "depth": 2,
+            "slug": "a-place-playlists",
+            "src": "a-place-playlists.mp4",
+            "description": {
+                "1": "Visualiza todas las listas de reproducción de una sección especifica",
+                "2": "Puedes mantener presionado el click izquierdo y arrastrar la lista de reproducción para reorganizarlos"
+            }
+        },
+        "a-playlists-all-songs": {
+            "title": "Lista de reproducción 'All Songs'",
+            "depth": 2,
+            "slug": "a-playlists-all-songs",
+            "src": "a-playlists-all-songs.mp4",
+            "description": {
+                "1": "Lista de reproducción por defecto, no se puede eliminar",
+                "2": "Además, Cuando se añade una nueva canción con 'Abrir con' del explorador de archivos del sistema o por arrastrar y soltar una canción en el reproductor principal, se añadirá a está lista de reproducción"
+            }
+        },
+        "a-playlist-unique-detail": {
+            "title": "Detalle de una Lista de Reproducción",
+            "depth": 2,
+            "slug": "a-playlist-unique-detail",
+            "src": "a-playlist-unique-detail.mp4",
+            "description": {
+                "1": "Si se posiciona sobre una lista de reproducción, aparecerá el botón de Reproducir la lista de reproducción, si la lista de reproducción ya está reproduciéndose, aparecerá el botón de Pausar la lista de reproducción",
+                "2": "Si se hace click izquierdo sobre la lista de reproducción, desplegara todas las canciones que se encuentran en la lista, si se realiza click nuevamente ocultara las canciones",
+                "3": "Además cuando se posiciona el mouse sobre la esquina superior izquierda aparecerá la opción de eliminar la lista de reproducción (si la lista de reproducción es 'All Songs' no se eliminará, pero vaciará todas las canciones de la lista de reproducción)",
+                "4": "Finalmente si se posiciona el mouse en la esquina inferior izquierda aparecerá la opción de cambiar el nombre de la lista de reproducción, se confirma el nuevo nombre con la tecla 'Enter', pero si se presiona 'Esc' o se quita el focus se cancelará el modo edición"
+            }
+        },
+        "a-add-playlist-section": {
+            "title": "Añadir nuevas Listas de Reproducción",
+            "depth": 2,
+            "slug": "a-add-playlist-section",
+            "src": "a-add-playlist-section.mp4",
+            "description": {
+                "1": "Puedes añadir una o más canciones desde nuestro explorador de archivos del sistema, arrastrando y soltando las canciones en la lista de reproducción",
+                "2": "Además puedes añadir una o más nuevas listas de reproducción en una sección especifica, arrastrando y soltando una o más carpetas de canciones en la sección deseada"
+            }
+        }
+    },
+    "docsMainBody": {
+        "main-screen": {
+            "title": "Pantalla Principal",
+            "depth": 1,
+            "slug": "main-screen"
+        },
+        "p-main-player": {
+            "title": "Reproductor Principal",
+            "depth": 2,
+            "slug": "p-main-player",
+            "src": "p-main-player.mp4",
+            "description": {
+                "1": "Reproduce la canción seleccionada",
+                "2": "Además puedes cambiar el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
+                "3": "También puedes cambiar el modo de reproducción a reproductor en pantalla completa, para visualizar la canción en pantalla completa o puedes usar la tecla de atajo 'F'"
+            }
+        },
+        "p-button-back": {
+            "title": "Botón 'Atras'",
+            "depth": 2,
+            "slug": "p-button-back",
+            "src": "p-button-back.mp4",
+            "description": {
+                "1": "Cuando se visualiza una lista de reproducción a detalle en la pantalla principal, con el botón atrás, vuelves a la pantalla principal de todas las listas de reproducción"
+            }
+        },
+        "p-button-plus": {
+            "title": "Botón '+'",
+            "depth": 2,
+            "slug": "p-button-plus",
+            "src": "p-button-plus.mp4",
+            "description": {
+                "1": "Añade una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción"
+            }
+        },
+        "p-main-place-section-name": {
+            "title": "Lugar Nombre Sección",
+            "depth": 2,
+            "slug": "p-main-place-section-name",
+            "src": "p-main-place-section-name.mp4",
+            "description": {
+                "1": "Visualiza el nombre de la sección donde contiene todas las listas de reproducción",
+                "2": "Si se realiza doble click, se podrá cambiar el nombre de la sección, se confirma el nuevo nombre con la tecla 'Enter', pero si se presiona 'Esc' o se quita el focus se cancelará el modo edición",
+                "3": "También al posicionarte sobre el nombre de la sección, aparecerá el botón de '+' para crear una nueva lista de reproducción en esa sección",
+                "4": "Finalmente si se posiciona sobre la esquina superior izquierda aparecerá la opción de eliminar la sección, se eliminará todas las listas de reproducción de esa sección y también la sección, pero si en la sección se encuentra la lista de reproducción 'All Songs' no se eliminará la sección, pero si se vaciara el resto de listas de reproducción de esa sección"
+            }
+        },
+        "p-main-place-playlists": {
+            "title": "Lugar 'Listas de Reproducción'",
+            "depth": 2,
+            "slug": "p-main-place-playlists",
+            "src": "p-main-place-playlists.mp4",
+            "description": {
+                "1": "Visualiza todas las listas de reproducción de una sección especifica y se va visualizando sección por sección",
+                "2": "Si se posiciona sobre una lista de reproducción, aparecerá el botón de Reproducir la lista de reproducción, si la lista de reproducción ya está reproduciéndose, aparecerá el botón de Pausar la lista de reproducción",
+                "3": "Además puedes posicionarte en la esquina superior izquierda de una lista de reproducción y te aparecerá la opción de eliminar la lista de reproducción (si la lista de reproducción es 'All Songs' no se eliminará, pero vaciara todas las canciones de la lista de reproducción)",
+                "4": "Finalmente si realizas click izquierdo sobre una lista de reproducción, ingresaras en el modo visualizar las canciones de la lista de reproducción en modo detalle"
+            }
+        },
+        "p-main-playlist-unique-detail": {
+            "title": "Detalle Lista de reproducción",
+            "depth": 2,
+            "slug": "p-main-playlist-unique-detail",
+            "src": "p-main-playlist-unique-detail.mp4",
+            "description": {
+                "1": "Visualiza a detalle la lista de reproducción",
+                "2": "Visualiza el botón de reproducir lista de reproducción, si la lista de reproducción ya se está reproduciendo, aparecerá el botón de pausar lista de reproducción",
+                "3": "Visualiza el botón de eliminar la lista de reproducción, si la lista de reproducción es 'All Songs' no se eliminará, pero vaciará todas las canciones de la lista de reproducción",
+                "4": "Visualiza el campo de 'Buscar canciones', para buscar una canción en especifico en la lista actual"
+            }
+        },
+        "p-edit-playlist": {
+            "title": "Editar la Lista de Reproducción",
+            "depth": 2,
+            "slug": "p-edit-playlist",
+            "src": "p-edit-playlist.mp4",
+            "description": {
+                "1": "Si haces click izquierdo sobre el nombre de la lista de reproducción, abrirá un modal para editar la Lista de reproducción",
+                "2": "Puedes editar el nombre de la Lista de reproducción en el campo 'Titulo'",
+                "3": "Puedes cambiar la imagen de la Lista de reproducción en el campo 'Imagen', si dejas el campo vacío podrás visualizar todas las imágenes por defecto disponible",
+                "4": "Además de cambiar la imagen con las opciones disponibles, puedes copiar y pegar la url de una imagen de la PC o de internet",
+                "5": "Otra forma de cambiar la imagen es presionando click izquierda sobre la imagen actual, se abrirá un modal para seleccionar una imagen de la PC",
+                "6": "También puedes editar el color de la Lista de reproducción en el campo 'Color', al hacer click sobre el color actual, podrás visualizar todos los colores disponibles",
+                "7": "Puedes editar a la sección a la que pertenece la Lista de reproducción en el campo 'Sección', al hacer click sobre la sección actual, podrás visualizar todas las secciones disponibles",
+                "8": "Finalmente puedes guardar los cambios con el botón 'Guardar' o cancelar los cambios presionando la tecla 'Esc' o haciendo click fuera del modal",
+                "9": "Como detalle final, con cada cambio se puede visualizar como quedaría la Lista de reproducción, pero si cancelas los cambios, volverá a sus valores originales"
+            }
+        },
+        "p-main-songs-playlist": {
+            "title": "Canciones de una Lista de Reproducción",
+            "depth": 2,
+            "slug": "p-main-songs-playlist",
+            "src": "p-main-songs-playlist.mp4",
+            "description": {
+                "1": "Visualiza todas las canciones de una lista de reproducción",
+                "2": "Además, puedes visualizar si una canción ya se está reproduciendo, se pondrá en color verde",
+                "3": "Puedes reproducir una canción haciendo doble click sobre la canción",
+                "4": "También puedes reproducir una canción posicionando el mouse sobre el numero de la canción y aparecerá el botón de reproducir la canción, pero si la canción ya se está reproduciendo aparecerá el botón de pausar la canción",
+                "5": "Finalmente puedes eliminar una canción haciendo click en el icono de la papelera"
+            }
+        },
+        "p-reorganize-songs-playlist": {
+            "title": "Reorganizar Canciones de una Lista de Reproducción",
+            "depth": 2,
+            "slug": "p-reorganize-songs-playlist",
+            "src": "p-reorganize-songs-playlist.mp4",
+            "description": {
+                "1": "Manteniendo presionado el click izquierdo sobre una canción, se pondrá en modo arrastrar y soltar y así puedes reorganizar la canción en la lista de reproducción",
+                "2": "Si haces click izquierdo sobre una canción, se seleccionará la canción y si vuelves a hacer click izquierdo se deseleccionará la canción",
+                "3": "Puedes seleccionar una canción y luego seleccionar otra canción manteniendo presionado la tecla 'Shift', y así seleccionaras todas las canciones entre las dos canciones seleccionadas",
+                "4": "También puedes seleccionar una canción y luego seleccionar otra canción manteniendo presionado la tecla 'Ctrl', y así seleccionaras las dos canciones seleccionadas",
+                "5": "Finalmente con las canciones seleccionadas puedes reorganizarlas presionando click izquierdo para arrastrarlas a la posición deseada"
+            }
+        },
+        "p-main-add-songs-playlist": {
+            "title": "Añadir Canciones a una Lista de Reproducción",
+            "depth": 2,
+            "slug": "p-main-add-songs-playlist",
+            "src": "p-main-add-songs-playlist.mp4",
+            "description": {
+                "1": "Puedes añadir una o más canciones desde nuestro explorador de archivos del sistema, arrastrando y soltando las canciones en la lista de reproducción",
+                "2": "Además puedes escoger en que posición se añadirá las canciones"
+            }
+        },
+        "p-dark-light-mode": {
+            "title": "Dark/Light Mode",
+            "depth": 2,
+            "slug": "p-dark-light-mode",
+            "src": "p-dark-light-mode.mp4",
+            "description": {
+                "1": "Cambia el modo de vista de la aplicación a modo oscuro o modo claro"
+            }
+        },
+        "p-change-languages": {
+            "title": "Cambio de lenguajes",
+            "depth": 2,
+            "slug": "p-change-languages",
+            "src": "p-change-languages.mp4",
+            "description": {
+                "1": "Cambia el lenguaje de la aplicación a Español o Ingles",
+                "2": "Además, si se cambia el lenguaje, se guardará el lenguaje seleccionado para la próxima vez que se abra la aplicación",
+                "3": "Finalmente, se puede implementar nuevos lenguajes en el futuro"
+            }
+        },
+        "import-playlists": {
+            "title": "Importar Listas de Reproducción",
+            "depth": 2,
+            "slug": "import-playlists",
+            "src": "p-import-playlists.mp4",
+            "description": {
+                "1": "Importa tus listas de reproducción favoritas de tu aplicación de música favorita",
+                "2": "Importa desde YouTube, al hacer click en el botón 'Importar YouTube', se abrirá una nueva ventana en tu navegador para solicitar permisos solo de lectura de tus listas de reproducción de YouTube",
+                "3": "Al importar tus listas de reproducción de YouTube, se creará una nueva sección con el nombre de 'YouTube' y se añadirá todas tus listas de reproducción de YouTube",
+                "4": "Por ahora solo YouTube está disponible, pero se puede implementar nuevas aplicaciones de música en el futuro"
+            }
+        }
+    },
+    "docsControls": {
+        "controls-section": {
+            "title": "Sección de Controles",
+            "depth": 1,
+            "slug": "controls-section"
+        },
+        "current-playback": {
+            "title": "Reproducción actual",
+            "depth": 2,
+            "slug": "current-playback",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Visualiza la canción que se está reproduciendo actualmente",
+                "2": "Además puedes hacer click en el nombre de la canción y se abrirá la lista de reproducción actual de la canción",
+                "3": "Si haces click nuevamente en el nombre de la canción, se centrará la canción en la lista de reproducción"
+            }
+        },
+        "playback-controls": {
+            "title": "Controles de Reproducción",
+            "depth": 2,
+            "slug": "playback-controls",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Reproduce la canción seleccionada",
+                "2": "Además puedes pausar la canción seleccionada",
+                "3": "También puedes adelantar la canción seleccionada",
+                "4": "También puedes retroceder la canción seleccionada",
+                "5": "Puedes presionar la opción de reproducir en modo aleatorio todas las canciones de la lista de reproducción",
+                "6": "Puedes presionar la opción de repetir, donde intercalara entre las opciones de repetir la canción actual, repetir la lista de reproducción actual o no repetir nada",
+                "7": "También puedes usar las teclas de atajo 'Espacio' para reproducir o pausar la canción, 'Flecha derecha' para adelantar la canción, 'Flecha izquierda' para retroceder la canción, 'A' para reproducir en modo aleatorio, 'R' para cambiar el modo de repetir",
+                "8": "Además puedes saltar a diferentes secciones de la canción con las teclas del 0 al 9, donde el 0 es el inicio de la canción y el 9 es el 90% de la canción",
+                "9": "Finalmente puedes utilizar las teclas multimedia de tu teclado para controlar la reproducción de la canción ej: 'Play/Pause', 'Stop', 'Anterior', 'Siguiente'"
+            }
+        },
+        "volume": {
+            "title": "Volumen",
+            "depth": 2,
+            "slug": "volume",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Controla el volumen de la canción seleccionada",
+                "2": "También puedes usar las teclas de atajo 'Flecha arriba' para subir el volumen y 'Flecha abajo' para bajar el volumen",
+                "3": "Además puedes utilizar las teclas multimedia de tu teclado para controlar el volumen de la canción ej: 'Volumen +', 'Volumen -'",
+                "4": "Finalmente puedes hacer click en el icono de altavoz para silenciar la canción o usar la tecla de atajo 'M'"
+            }
+        },
+        "show-shortcuts": {
+            "title": "Mostrar atajos de teclado",
+            "depth": 2,
+            "slug": "show-shortcuts",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Visualiza todos los atajos de teclado disponibles en la aplicación",
+                "2": "Además puedes ocultar los atajos de teclado con la tecla 'Esc' o haciendo click fuera del modal"
+            }
+        },
+        "change-playback-speed": {
+            "title": "Cambiar velocidad de reproducción",
+            "depth": 2,
+            "slug": "change-playback-speed",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Cambia la velocidad de reproducción de la canción seleccionada",
+                "2": "Puedes cambiar la velocidad de reproducción de la canción seleccionada con las teclas de atajo '+' para subir la velocidad y '-' para bajar la velocidad"
+            }
+        },
+        "show-pip-mode": {
+            "title": "Mostrar reproductor en miniatura",
+            "depth": 2,
+            "slug": "show-pip-mode",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "Cambia el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
+                "2": "También puedes manipular el reproductor en miniatura independientemente de la aplicación principal"
+            }
+        },
+        "show-theater-mode": {
+            "title": "Reproductor en modo teatro",
+            "depth": 2,
+            "slug": "show-theater-mode",
+            "src": "p-reproduce-by-dd.mp4",
+            "description": {
+                "1": "En modo de reproducción normal, puedes cambiar el modo de reproducción en modo teatro, para visualizar la canción casi en pantalla completa, sin visualizar las listas de reproducción ni los controles de reproducción"
+            }
+        }
+    },
+    "docsOptions": {
+        "appOptions": {
+            "title": "Opciones de la aplicación",
+            "depth": 1,
+            "slug": "app-options"
+        },
+        "export-config": {
+            "title": "Exportar configuración",
+            "depth": 2,
+            "slug": "export-config",
+            "src": "p-export-config.mp4",
+            "description": {
+                "1": "Exporta la configuración actual de la aplicación",
+                "2": "Al exportar la configuración, se descargará un archivo json con la configuración actual de la aplicación",
+                "3": "También incluirá las listas de reproducción y las canciones de las listas de reproducción"
+            }
+        },
+        "import-config": {
+            "title": "Importar configuración",
+            "depth": 2,
+            "slug": "import-config",
+            "src": "p-import-config.mp4",
+            "description": {
+                "1": "Importa la configuración de la aplicación",
+                "2": "Al importar la configuración, se abrirá un modal para seleccionar el archivo json con la configuración de la aplicación",
+                "3": "Al importar la configuración, se sobrescribirá la configuración actual de la aplicación",
+                "4": "También sobrescribirá las listas de reproducción y las canciones de las listas de reproducción"
+            }
+        },
+        "update-app": {
+            "title": "Actualizar aplicación",
+            "depth": 2,
+            "slug": "update-app",
+            "src": "p-update-app.mp4",
+            "description": {
+                "1": "Actualiza la aplicación a la última versión disponible",
+                "2": "Al actualizar la aplicación, se descargará la última versión disponible y se instalará automáticamente"
+            }
+        }
     }
 }

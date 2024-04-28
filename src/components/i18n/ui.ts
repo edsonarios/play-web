@@ -31,9 +31,15 @@ export const routes = {
 	es: {
 		docs: 'docs',
 		docsMainMenu: 'docsMainMenu',
+		docsMainBody: 'docsMainBody',
+		docsControls: 'docsControls',
+		docsOptions: 'docsOptions',
 	},
 	en: {
 		docs: 'docs',
 		docsMainMenu: 'docsMainMenu',
+		docsMainBody: 'docsMainBody',
+		docsControls: 'docsControls',
+		docsOptions: 'docsOptions',
 	},
 };
