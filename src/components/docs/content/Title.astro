@@ -1,0 +1,9 @@
+---
+const { title, description } = Astro.props;
+---
+
+<h2
+  class={`text-3xl mb-4 ${!description ? "text-5xl border-b-2 border-gray-700 p-4" : "ml-8"}`}
+>
+  {title}
+</h2>

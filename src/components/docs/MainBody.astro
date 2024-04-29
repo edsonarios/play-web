@@ -1,4 +1,7 @@
 ---
+import Description from "./content/Description.astro";
+import Title from "./content/Title.astro";
+import VideoDocs from "./content/VideoDocs.astro";
 import { docsMainBody } from "./features";
 ---
 
@@ -7,27 +10,12 @@ import { docsMainBody } from "./features";
     docsMainBody.map(({ depth, title, slug, description, src }) => {
       return (
         <section id={slug} class="mb-16">
-          <h2
-            class={`text-3xl mb-4 ${!description ? "text-5xl border-b-2 border-gray-700 p-4" : "ml-8"}`}
-          >
-            {title}
-          </h2>
+          <Title title={title} description={description} />
           {description &&
             description.map((description) => (
-              <p class={`${depth === 2 ? "ml-8 text-gray-400" : ""} mb-6`}>
-                {description}
-              </p>
+              <Description depth={depth} description={description} />
             ))}
-          {src && (
-            <video
-              autoplay
-              muted
-              playsinline
-              onclick="this.paused ? this.play() : this.pause()"
-              class={`${depth === 2 ? "ml-8" : ""} w-[1000px] hover:scale-105 transition-transform`}
-              src={`/media/${src}`}
-            />
-          )}
+          {src && <VideoDocs depth={depth} src={src} />}
         </section>
       );
     })
