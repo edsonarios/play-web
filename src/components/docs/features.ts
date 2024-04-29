@@ -9,9 +9,7 @@ export interface IDocFeatures {
 export interface IDocTranslations {
   [key: string]: {
     title: string;
-    depth: number;
     slug: string;
-    src?: string;
     description?: { [index: number]: string };
   }
 }
@@ -26,7 +24,8 @@ export function translateDoc(docFeatures: IDocFeatures[], translations: IDocTran
     };
   });
 }
-
+//! Not use title and description because it's translated
+// slug is the key to find the translation
 export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Menu Principal",

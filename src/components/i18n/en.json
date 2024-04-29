@@ -45,14 +45,11 @@
     "docsMainMenu": {
         "main-menu": {
             "title": "Main Menu",
-            "depth": 1,
             "slug": "main-menu"
         },
         "button-home": {
             "title": "'Home' Button",
-            "depth": 2,
             "slug": "button-home",
-            "src": "a-button-home.mp4",
             "description": {
                 "1": "Change the playback mode to thumbnail player (Picture in Picture, pip mode, shortcut key 'P'), to show you all the playlists on the main screen",
                 "2": "If you press the 'Home' button again, you will see the music playing again"
@@ -60,9 +57,7 @@
         },
         "button-open-folder": {
             "title": "'Open Folder' button",
-            "depth": 2,
             "slug": "button-open-folder",
-            "src": "a-button-open-folder.mp4",
             "description": {
                 "1": "Opens the option to add an entire folder of songs, and adds them as a single playlist",
                 "2": "You can also use the shortcut key 'O'"
@@ -70,18 +65,14 @@
         },
         "button-plus": {
             "title": "'+' button in the Library section",
-            "depth": 2,
             "slug": "button-plus",
-            "src": "a-button-plus.mp4",
             "description": {
                 "1": "Create a new playlist section, where you can create new playlists and thus keep your playlists organized"
             }
         },
         "place-section-name": {
             "title": "Place Name Section",
-            "depth": 2,
             "slug": "place-section-name",
-            "src": "a-place-section-name.mp4",
             "description": {
                 "1": "Displays the name of the section where it contains all the playlists",
                 "2": "If you double click, you can change the name of the section, confirm the new name with the 'Enter' key, but if you press 'Esc' or remove the focus, the editing mode will be cancelled.",
@@ -91,9 +82,7 @@
         },
         "place-playlists": {
             "title": "Place 'Playlists'",
-            "depth": 2,
             "slug": "place-playlists",
-            "src": "a-place-playlists.mp4",
             "description": {
                 "1": "View all playlists in a specific section",
                 "2": "You can hold down the left click and drag the playlist to rearrange them"
@@ -101,9 +90,7 @@
         },
         "playlists-all-songs": {
             "title": "'All Songs' Playlist",
-            "depth": 2,
             "slug": "playlists-all-songs",
-            "src": "a-playlists-all-songs.mp4",
             "description": {
                 "1": "Default playlist, cannot be deleted",
                 "2": "Additionally, when you add a new song with 'Open with' from the system file explorer or by dragging and dropping a song into the main player, it will be added to this playlist"
@@ -111,9 +98,7 @@
         },
         "playlist-unique-detail": {
             "title": "Detail of a Playlist",
-            "depth": 2,
             "slug": "playlist-unique-detail",
-            "src": "a-playlist-unique-detail.mp4",
             "description": {
                 "1": "If you hover over a playlist, the Play Playlist button will appear, if the playlist is already playing, the Pause Playlist button will appear.",
                 "2": "If you left click on the playlist, it will display all the songs that are in the list, if you click again it will hide the songs",
@@ -123,9 +108,7 @@
         },
         "add-playlist-section": {
             "title": "Add new Playlists",
-            "depth": 2,
             "slug": "add-playlist-section",
-            "src": "a-add-playlist-section.mp4",
             "description": {
                 "1": "You can add one or more songs from our system file explorer by dragging and dropping songs into the playlist",
                 "2": "Additionally, you can add one or more new playlists to a specific section by dragging and dropping one or more song folders into the desired section."
@@ -135,14 +118,11 @@
     "docsMainBody": {
         "main-screen": {
             "title": "Main screen",
-            "depth": 1,
             "slug": "main-screen"
         },
         "main-player": {
             "title": "Main Player",
-            "depth": 2,
             "slug": "main-player",
-            "src": "p-main-player.mp4",
             "description": {
                 "1": "Play the selected song",
                 "2": "You can also change the playback mode to miniature player (Picture in Picture, pip mode, shortcut key 'P'), to show you all the playlists on the main screen",
@@ -151,27 +131,21 @@
         },
         "button-back": {
             "title": "'Back' button",
-            "depth": 2,
             "slug": "button-back",
-            "src": "p-button-back.mp4",
             "description": {
                 "1": "When viewing a playlist in detail on the main screen, with the back button you return to the main screen of all playlists"
             }
         },
         "button-plus": {
             "title": "'+' button",
-            "depth": 2,
             "slug": "button-plus",
-            "src": "p-button-plus.mp4",
             "description": {
                 "1": "Add a new playlist section, where you can create new playlists and thus keep your playlists organized"
             }
         },
         "main-place-section-name": {
             "title": "Place Name Section",
-            "depth": 2,
             "slug": "main-place-section-name",
-            "src": "p-main-place-section-name.mp4",
             "description": {
                 "1": "Displays the name of the section where it contains all the playlists",
                 "2": "If you double click, you can change the name of the section, confirm the new name with the 'Enter' key, but if you press 'Esc' or remove the focus, the editing mode will be cancelled",
@@ -181,9 +155,7 @@
         },
         "main-place-playlists": {
             "title": "Place 'Playlists'",
-            "depth": 2,
             "slug": "main-place-playlists",
-            "src": "p-main-place-playlists.mp4",
             "description": {
                 "1": "View all playlists in a specific section and view them section by section",
                 "2": "If you hover over a playlist, the Play Playlist button will appear, if the playlist is already playing, the Pause Playlist button will appear",
@@ -193,9 +165,7 @@
         },
         "main-playlist-unique-detail": {
             "title": "Detail Playlist",
-            "depth": 2,
             "slug": "main-playlist-unique-detail",
-            "src": "p-main-playlist-unique-detail.mp4",
             "description": {
                 "1": "View the playlist in detail",
                 "2": "Displays the play playlist button, if the playlist is already playing, the pause playlist button will appear",
@@ -205,9 +175,7 @@
         },
         "edit-playlist": {
             "title": "Edit Playlist",
-            "depth": 2,
             "slug": "edit-playlist",
-            "src": "p-edit-playlist.mp4",
             "description": {
                 "1": "If you left click on the name of the playlist, it will open a modal to edit the Playlist",
                 "2": "You can edit the name of the Playlist in the 'Title' field",
@@ -222,9 +190,7 @@
         },
         "main-songs-playlist": {
             "title": "Songs in a Playlist",
-            "depth": 2,
             "slug": "main-songs-playlist",
-            "src": "p-main-songs-playlist.mp4",
             "description": {
                 "1": "View all songs in a playlist",
                 "2": "Additionally, you can see if a song is already playing, it will turn green",
@@ -235,9 +201,7 @@
         },
         "reorganize-songs-playlist": {
             "title": "Rearrange Songs in a Playlist",
-            "depth": 2,
             "slug": "reorganize-songs-playlist",
-            "src": "p-reorganize-songs-playlist.mp4",
             "description": {
                 "1": "Holding down the left click on a song will put it into drag and drop mode so you can rearrange the song in the playlist",
                 "2": "If you left click on a song, the song will be selected and if you left click again the song will be deselected",
@@ -248,9 +212,7 @@
         },
         "main-add-songs-playlist": {
             "title": "Add Songs to a Playlist",
-            "depth": 2,
             "slug": "main-add-songs-playlist",
-            "src": "p-main-add-songs-playlist.mp4",
             "description": {
                 "1": "You can add one or more songs from our system file explorer by dragging and dropping songs into the playlist",
                 "2": "You can also choose in which position the songs will be added"
@@ -258,18 +220,14 @@
         },
         "dark-light-mode": {
             "title": "Dark/Light Mode",
-            "depth": 2,
             "slug": "dark-light-mode",
-            "src": "p-dark-light-mode.mp4",
             "description": {
                 "1": "Change the app view mode to dark mode or light mode"
             }
         },
         "change-languages": {
             "title": "Language change",
-            "depth": 2,
             "slug": "change-languages",
-            "src": "p-change-languages.mp4",
             "description": {
                 "1": "Change the language of the application to Spanish or English",
                 "2": "Additionally, if the language is changed, the selected language will be saved for the next time the application is opened",
@@ -278,9 +236,7 @@
         },
         "import-playlists": {
             "title": "Import Playlists",
-            "depth": 2,
             "slug": "import-playlists",
-            "src": "p-import-playlists.mp4",
             "description": {
                 "1": "Import your favorite playlists from your favorite music app",
                 "2": "Import from YouTube, when you click on the 'Import YouTube' button, a new window will open in your browser to request read-only permissions for your YouTube playlists",
@@ -292,14 +248,11 @@
     "docsControls": {
         "controls-section": {
             "title": "Controls Section",
-            "depth": 1,
             "slug": "controls-section"
         },
         "current-playback": {
             "title": "Current Play",
-            "depth": 2,
             "slug": "current-playback",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "View the song currently playing",
                 "2": "You can also click on the name of the song and the current playlist of the song will open",
@@ -308,9 +261,7 @@
         },
         "playback-controls": {
             "title": "Playback Controls",
-            "depth": 2,
             "slug": "playback-controls",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "Play the selected song",
                 "2": "You can also pause the selected song",
@@ -325,9 +276,7 @@
         },
         "volume": {
             "title": "Volume",
-            "depth": 2,
             "slug": "volume",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "Control the volume of the selected song",
                 "2": "You can also use the shortcut keys 'Up Arrow' to increase the volume and 'Down Arrow' to decrease the volume",
@@ -337,9 +286,7 @@
         },
         "show-shortcuts": {
             "title": "Show keyboard shortcuts",
-            "depth": 2,
             "slug": "show-shortcuts",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "View all keyboard shortcuts available in the application",
                 "2": "You can also hide keyboard shortcuts with the 'Esc' key or by clicking outside the modal"
@@ -347,9 +294,7 @@
         },
         "change-playback-speed": {
             "title": "Change playback speed",
-            "depth": 2,
             "slug": "change-playback-speed",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "Change the playback speed of the selected song",
                 "2": "You can change the playback speed of the selected song with the shortcut keys '+' to increase the speed and '-' to decrease the speed"
@@ -357,9 +302,7 @@
         },
         "show-pip-mode": {
             "title": "Show thumbnail player",
-            "depth": 2,
             "slug": "show-pip-mode",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "Change the playback mode to thumbnail player (Picture in Picture, pip mode, shortcut key 'P'), to show you all the playlists on the main screen",
                 "2": "You can also manipulate the thumbnail player independently of the main application"
@@ -367,9 +310,7 @@
         },
         "show-theater-mode": {
             "title": "Player in theater mode",
-            "depth": 2,
             "slug": "show-theater-mode",
-            "src": "p-reproduce-by-dd.mp4",
             "description": {
                 "1": "In normal playback mode, you can change the playback mode to theater mode, to view the song almost in full screen, without displaying the playlists or playback controls"
             }
@@ -378,14 +319,11 @@
     "docsOptions": {
         "app-options": {
             "title": "Application options",
-            "depth": 1,
             "slug": "app-options"
         },
         "export-config": {
             "title": "Export settings",
-            "depth": 2,
             "slug": "export-config",
-            "src": "p-export-config.mp4",
             "description": {
                 "1": "Export current application settings",
                 "2": "When exporting the configuration, a json file with the current application configuration will be downloaded",
@@ -394,9 +332,7 @@
         },
         "import-config": {
             "title": "Import settings",
-            "depth": 2,
             "slug": "import-config",
-            "src": "p-import-config.mp4",
             "description": {
                 "1": "Import application settings",
                 "2": "When importing the configuration, a modal will open to select the json file with the application configuration",
@@ -406,9 +342,7 @@
         },
         "update-app": {
             "title": "Update app",
-            "depth": 2,
             "slug": "update-app",
-            "src": "p-update-app.mp4",
             "description": {
                 "1": "Update the application to the latest available version",
                 "2": "When you update the app, the latest available version will be downloaded and installed automatically"
