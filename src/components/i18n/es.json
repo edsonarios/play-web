@@ -257,7 +257,7 @@
             }
         },
         "dark-light-mode": {
-            "title": "Dark/Light Mode",
+            "title": "Modo Dark/Light",
             "depth": 2,
             "slug": "dark-light-mode",
             "src": "p-dark-light-mode.mp4",
