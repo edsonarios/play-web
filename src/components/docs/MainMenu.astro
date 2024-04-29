@@ -1,13 +1,17 @@
 ---
+import { getI18N } from "../i18n";
 import Description from "./content/Description.astro";
 import Title from "./content/Title.astro";
 import VideoDocs from "./content/VideoDocs.astro";
-import { docsMainMenu } from "./features";
+import { translateDoc, docsMainMenu } from "./features";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const translatedDocsMainMenu = translateDoc(docsMainMenu, i18n.docsMainMenu);
 ---
 
 <main class="content bg-zinc-900 pl-[350px] grow">
   {
-    docsMainMenu.map(({ depth, title, slug, description, src }) => {
+    translatedDocsMainMenu.map(({ depth, title, slug, description, src }) => {
       return (
         <section id={slug} class="mb-16">
           <Title title={title} description={description} />

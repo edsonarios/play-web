@@ -5,20 +5,25 @@ import Title from "./content/Title.astro";
 import VideoDocs from "./content/VideoDocs.astro";
 import type { IDocFeatures } from "./features";
 
-// import { docsOptions } from "./features";
+import { translateDoc, docsOptions } from "./features";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
-// const mainFeatures = [
-//   {
-//     title: `${i18n.mainFeatures.feature1.title}`,
-//     description: `${i18n.mainFeatures.feature1.description}`,
-//     src: "feature-1.mp4",
-//   },
-// ]
-const docsOptions = [
+// const translateDocOption = (option: IDocFeatures) => {
+//   const translations = i18n.docsOptions[option.slug as keyof typeof i18n.docsOptions] as { title: string; depth: number; slug: string; src?: string; description?: string[] };
+//   return {
+//     ...option,
+//     title: translations.title,
+//     description: option.description?.map((desc, index) => translations.description?.[index + 1] || desc) || []
+//   };
+// };
+
+// const translatedDocsOptions = docsOptions.map(translateDocOption);
+
+const translatedDocsOptions = translateDoc(docsOptions, i18n.docsOptions);
+const docsOptionsAstro = [
   {
-    title: `${i18n.docsOptions.appOptions.title}`,
+    title: `${i18n.docsOptions['app-options'].title}`,
     depth: 1,
     slug: "app-options",
   },
@@ -60,7 +65,7 @@ const docsOptions = [
 
 <main class="content bg-zinc-900 pl-[350px] grow">
   {
-    docsOptions.map(({ depth, title, slug, description, src }) => {
+    translatedDocsOptions.map(({ depth, title, slug, description, src }) => {
       return (
         <section id={slug} class="mb-16">
           <Title title={title} description={description} />

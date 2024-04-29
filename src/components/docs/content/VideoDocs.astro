@@ -17,9 +17,10 @@ const { depth, src } = Astro.props;
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    const percentajeToVisible = 0.5;
     const videos: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.9) {
+        if (entry.isIntersecting && entry.intersectionRatio > percentajeToVisible) {
           const video = entry.target as any;
           const source = video.querySelector("source");
           source.src = video.dataset.src;
@@ -35,7 +36,7 @@ const { depth, src } = Astro.props;
 
     const observerOption = {
       rootMargin: "0px",
-      threshold: 0.9,
+      threshold: percentajeToVisible,
     };
     const videoObserver = new IntersectionObserver(videos, observerOption);
     document.querySelectorAll("video[data-src]").forEach((video) => {

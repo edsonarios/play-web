@@ -6,6 +6,27 @@ export interface IDocFeatures {
   description?: string[];
 }
 
+export interface IDocTranslations {
+  [key: string]: {
+    title: string;
+    depth: number;
+    slug: string;
+    src?: string;
+    description?: { [index: number]: string };
+  }
+}
+
+export function translateDoc(docFeatures: IDocFeatures[], translations: IDocTranslations): IDocFeatures[] {
+  return docFeatures.map(option => {
+    const translation = translations[option.slug] as IDocFeatures & { description?: { [index: number]: string } };
+    return {
+      ...option,
+      title: translation.title,
+      description: option.description?.map((desc, index) => translation.description ? translation.description[index + 1] || desc : desc) || []
+    };
+  });
+}
+
 export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Menu Principal",
@@ -15,7 +36,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Botón 'Inicio'",
     depth: 2,
-    slug: "a-button-home",
+    slug: "button-home",
     src: "a-button-home.mp4",
     description: [
       "Cambia el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
@@ -25,7 +46,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Botón 'Abrir Carpeta'",
     depth: 2,
-    slug: "a-button-open-folder",
+    slug: "button-open-folder",
     src: "a-button-open-folder.mp4",
     description: [
       "Abre la opción de añadir toda una carpeta de canciones, y las añade como una sola lista de reproducción",
@@ -35,7 +56,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Botón '+' de la sección de Librería",
     depth: 2,
-    slug: "a-button-plus",
+    slug: "button-plus",
     src: "a-button-plus.mp4",
     description: [
       "Crea una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción",
@@ -44,7 +65,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Lugar Nombre Sección",
     depth: 2,
-    slug: "a-place-section-name",
+    slug: "place-section-name",
     src: "a-place-section-name.mp4",
     description: [
       "Visualiza el nombre de la sección donde contiene todas las listas de reproducción",
@@ -56,7 +77,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Lugar 'Listas de Reproducción'",
     depth: 2,
-    slug: "a-place-playlists",
+    slug: "place-playlists",
     src: "a-place-playlists.mp4",
     description: [
       "Visualiza todas las listas de reproducción de una sección especifica",
@@ -66,7 +87,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Lista de reproducción 'All Songs'",
     depth: 2,
-    slug: "a-playlists-all-songs",
+    slug: "playlists-all-songs",
     src: "a-playlists-all-songs.mp4",
     description: [
       "Lista de reproducción por defecto, no se puede eliminar",
@@ -76,7 +97,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Detalle de una Lista de Reproducción",
     depth: 2,
-    slug: "a-playlist-unique-detail",
+    slug: "playlist-unique-detail",
     src: "a-playlist-unique-detail.mp4",
     description: [
       "Si se posiciona sobre una lista de reproducción, aparecerá el botón de Reproducir la lista de reproducción, si la lista de reproducción ya está reproduciéndose, aparecerá el botón de Pausar la lista de reproducción",
@@ -88,7 +109,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Añadir nuevas Listas de Reproducción",
     depth: 2,
-    slug: "a-add-playlist-section",
+    slug: "add-playlist-section",
     src: "a-add-playlist-section.mp4",
     description: [
       "Puedes añadir una o más canciones desde nuestro explorador de archivos del sistema, arrastrando y soltando las canciones en la lista de reproducción",
@@ -106,7 +127,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Reproductor Principal",
     depth: 2,
-    slug: "p-main-player",
+    slug: "main-player",
     src: "p-main-player.mp4",
     description: [
       "Reproduce la canción seleccionada",
@@ -117,7 +138,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Botón 'Atras'",
     depth: 2,
-    slug: "p-button-back",
+    slug: "button-back",
     src: "p-button-back.mp4",
     description: [
       "Cuando se visualiza una lista de reproducción a detalle en la pantalla principal, con el botón atrás, vuelves a la pantalla principal de todas las listas de reproducción",
@@ -126,7 +147,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Botón '+'",
     depth: 2,
-    slug: "p-button-plus",
+    slug: "button-plus",
     src: "p-button-plus.mp4",
     description: [
       "Añade una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción",
@@ -135,7 +156,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Lugar Nombre Sección",
     depth: 2,
-    slug: "p-main-place-section-name",
+    slug: "main-place-section-name",
     src: "p-main-place-section-name.mp4",
     description: [
       "Visualiza el nombre de la sección donde contiene todas las listas de reproducción",
@@ -147,7 +168,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Lugar 'Listas de Reproducción'",
     depth: 2,
-    slug: "p-main-place-playlists",
+    slug: "main-place-playlists",
     src: "p-main-place-playlists.mp4",
     description: [
       "Visualiza todas las listas de reproducción de una sección especifica y se va visualizando sección por sección",
@@ -159,7 +180,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Detalle Lista de reproducción",
     depth: 2,
-    slug: "p-main-playlist-unique-detail",
+    slug: "main-playlist-unique-detail",
     src: "p-main-playlist-unique-detail.mp4",
     description: [
       "Visualiza a detalle la lista de reproducción",
@@ -171,7 +192,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Editar la Lista de Reproducción",
     depth: 2,
-    slug: "p-edit-playlist",
+    slug: "edit-playlist",
     src: "p-edit-playlist.mp4",
     description: [
       "Si haces click izquierdo sobre el nombre de la lista de reproducción, abrirá un modal para editar la Lista de reproducción",
@@ -188,7 +209,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Canciones de una Lista de Reproducción",
     depth: 2,
-    slug: "p-main-songs-playlist",
+    slug: "main-songs-playlist",
     src: "p-main-songs-playlist.mp4",
     description: [
       "Visualiza todas las canciones de una lista de reproducción",
@@ -201,7 +222,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Reorganizar Canciones de una Lista de Reproducción",
     depth: 2,
-    slug: "p-reorganize-songs-playlist",
+    slug: "reorganize-songs-playlist",
     src: "p-reorganize-songs-playlist.mp4",
     description: [
       "Manteniendo presionado el click izquierdo sobre una canción, se pondrá en modo arrastrar y soltar y así puedes reorganizar la canción en la lista de reproducción",
@@ -214,7 +235,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Añadir Canciones a una Lista de Reproducción",
     depth: 2,
-    slug: "p-main-add-songs-playlist",
+    slug: "main-add-songs-playlist",
     src: "p-main-add-songs-playlist.mp4",
     description: [
       "Puedes añadir una o más canciones desde nuestro explorador de archivos del sistema, arrastrando y soltando las canciones en la lista de reproducción",
@@ -224,7 +245,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Dark/Light Mode",
     depth: 2,
-    slug: "p-dark-light-mode",
+    slug: "dark-light-mode",
     src: "p-dark-light-mode.mp4",
     description: [
       "Cambia el modo de vista de la aplicación a modo oscuro o modo claro",
@@ -233,7 +254,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Cambio de lenguajes",
     depth: 2,
-    slug: "p-change-languages",
+    slug: "change-languages",
     src: "p-change-languages.mp4",
     description: [
       "Cambia el lenguaje de la aplicación a Español o Ingles",
@@ -244,7 +265,7 @@ export const docsMainBody: IDocFeatures[] = [
   {
     title: "Importar Listas de Reproducción",
     depth: 2,
-    slug: "p-import-playlists",
+    slug: "import-playlists",
     src: "p-import-playlists.mp4",
     description: [
       "Importa tus listas de reproducción favoritas de tu aplicación de música favorita",
@@ -264,7 +285,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Reproducción actual",
     depth: 2,
-    slug: "c-current-playback",
+    slug: "current-playback",
     src: "c-current-playback.mp4",
     description: [
       "Visualiza la canción que se está reproduciendo actualmente",
@@ -275,7 +296,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Controles de Reproducción",
     depth: 2,
-    slug: "c-playback-controls",
+    slug: "playback-controls",
     src: "c-playback-controls.mp4",
     description: [
       "Reproduce la canción seleccionada",
@@ -292,7 +313,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Volumen",
     depth: 2,
-    slug: "c-volume",
+    slug: "volume",
     src: "c-volume.mp4",
     description: [
       "Controla el volumen de la canción seleccionada",
@@ -304,7 +325,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Mostrar atajos de teclado",
     depth: 2,
-    slug: "c-show-shortcuts",
+    slug: "show-shortcuts",
     src: "c-show-shortcuts.mp4",
     description: [
       "Visualiza todos los atajos de teclado disponibles en la aplicación",
@@ -314,7 +335,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Cambiar velocidad de reproducción",
     depth: 2,
-    slug: "c-change-playback-speed",
+    slug: "change-playback-speed",
     src: "c-change-playback-speed.mp4",
     description: [
       "Cambia la velocidad de reproducción de la canción seleccionada",
@@ -324,7 +345,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Mostrar reproductor en miniatura",
     depth: 2,
-    slug: "c-show-pip-mode",
+    slug: "show-pip-mode",
     src: "c-show-pip-mode.mp4",
     description: [
       "Cambia el modo de reproducción a reproductor en miniatura (Picture in Picture, pip mode, tecla de atajo 'P'), para mostrarte todas las listas de reproducción en la pantalla principal",
@@ -334,7 +355,7 @@ export const docsControls: IDocFeatures[] = [
   {
     title: "Reproductor en modo teatro",
     depth: 2,
-    slug: "c-show-theater-mode",
+    slug: "show-theater-mode",
     src: "c-show-theater-mode.mp4",
     description: [
       "En modo de reproducción normal, puedes cambiar el modo de reproducción en modo teatro, para visualizar la canción casi en pantalla completa, sin visualizar las listas de reproducción ni los controles de reproducción",
@@ -351,7 +372,7 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Exportar configuración",
     depth: 2,
-    slug: "o-export-config",
+    slug: "export-config",
     src: "o-export-config.mp4",
     description: [
       "Exporta la configuración actual de la aplicación",
@@ -362,7 +383,7 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Importar configuración",
     depth: 2,
-    slug: "o-import-config",
+    slug: "import-config",
     src: "o-import-config.mp4",
     description: [
       "Importa la configuración de la aplicación",
@@ -374,7 +395,7 @@ export const docsOptions: IDocFeatures[] = [
   {
     title: "Actualizar aplicación",
     depth: 2,
-    slug: "o-update-app",
+    slug: "update-app",
     src: "o-update-app.mp4",
     description: [
       "Actualiza la aplicación a la última versión disponible",
