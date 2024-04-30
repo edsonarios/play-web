@@ -407,14 +407,16 @@ export function Linux({ size = 60 }) {
 export function Download() {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="14"
       height="14"
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
     >
-      <g fill="currentColor" stroke="currentColor">
-        <path d="M15 7c-0.553 0-1 0.448-1 1v6h-12v-6c0-0.552-0.447-1-1-1s-1 0.448-1 1v7c0 0.552 0.447 1 1 1h14c0.553 0 1-0.448 1-1v-7c0-0.552-0.447-1-1-1zM9 7v-6.122c0-0.485-0.447-0.878-1-0.878s-1 0.393-1 0.878v6.122h-3l4 4 4-4h-3z"></path>
-      </g>
+      <path
+        fill="currentColor"
+        stroke="currentColor"
+        d="M15 7a1 1 0 0 0-1 1v6H2V8a1 1 0 1 0-2 0v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM9 7V.878C9 .393 8.553 0 8 0S7 .393 7 .878V7H4l4 4 4-4H9z"
+      />
     </svg>
   );
 }

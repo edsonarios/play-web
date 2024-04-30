@@ -1,6 +1,5 @@
 ---
-import { Download } from "../../icons/Platforms";
-import { appName } from "../../utils/constants";
+import Download from "@/icons/Download.astro";
 import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
@@ -42,13 +41,13 @@ const navbarLinks = [
         <a class="flex h-full place-self-center" href={translatePath("/")}>
           <div class="relative w-80">
             <img
-              src="/icon/iconPlay.png"
+              src="/icon/iconPlay.webp"
               alt="played logo"
               class="navIconPlay left-[127px] smaller-logo"
               id="navbarLogo"
             />
             <img
-              src="/icon/eDevPlay.png"
+              src="/icon/eDevPlay.webp"
               alt="played logo"
               class="navIconPlay left-0 original-logo"
               id="navbarLogo"

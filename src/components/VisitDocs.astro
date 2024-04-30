@@ -1,17 +1,24 @@
 ---
 import { getI18N } from "./i18n";
+import { getLangFromUrl, useTranslatedPath } from "./i18n/utils";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="text-center text-2xl text-balance">
   <p>
     <div class="mb-4 text-4xl">
       {i18n.visitDocs.docs}
-      <strong>50</strong> {i18n.visitDocs.docs2}
+      <strong>50</strong>
+      {i18n.visitDocs.docs2}
     </div>
     <span>{i18n.visitDocs.visit} -></span>
-    <a class="text-blue-400" href="/docs">{i18n.visitDocs.documentation}</a>
+    <a class="text-blue-400" href={translatePath("/docs")}
+      >{i18n.visitDocs.documentation}</a
+    >
   </p>
 </section>

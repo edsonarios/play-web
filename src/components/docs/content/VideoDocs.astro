@@ -2,7 +2,7 @@
 const { depth, src } = Astro.props;
 ---
 
-<div>
+<div class="group">
   <video
     autoplay
     muted
@@ -13,14 +13,19 @@ const { depth, src } = Astro.props;
   >
     <source type="video/mp4" /></video
   >
+  <div class="text-left ml-8 mt-2">
+    <p class="text-sm text-gray-500 opacity-5 group-hover:opacity-100">Click to play/pause</p>
+  </div>
 </div>
-
 <script>
   document.addEventListener("astro:page-load", () => {
     const percentajeToVisible = 0.5;
     const videos: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > percentajeToVisible) {
+        if (
+          entry.isIntersecting &&
+          entry.intersectionRatio > percentajeToVisible
+        ) {
           const video = entry.target as any;
           const source = video.querySelector("source");
           source.src = video.dataset.src;
