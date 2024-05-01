@@ -31,14 +31,14 @@ const navbarLinks = [
 ---
 
 <nav
-  class="navbar top-0 w-full h-24 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl"
+  class="navbar top-0 w-full h-36 md:h-24 flex flex-col justify-center items-center md:sticky bg-customDarkBg1 bg-customDarkBgTransparent z-40 backdrop-blur-xl"
 >
   <div
-    class={`2xl:w-[1280px] xl:w-10/12 w-11/12 flex ${showLogo === true ? "justify-around" : "justify-end"}`}
+    class={`2xl:w-[1280px] xl:w-10/12 w-11/12 flex flex-col md:flex-row ${showLogo === true ? "justify-around" : "justify-end"}`}
   >
     {
       showLogo === true && (
-        <a class="flex h-full place-self-center" href={translatePath("/")}>
+        <a class="flex h-full place-self-center ml-32 sm:ml-28 md:ml-0" href={translatePath("/")}>
           <div class="relative w-80">
             <img
               src="/icon/iconPlay.webp"
@@ -57,32 +57,41 @@ const navbarLinks = [
         </a>
       )
     }
-    <div class="flex h-full" transition:name="navbar">
-      {
-        navbarLinks.map(({ name, href }) => {
-          const isExternal = href.startsWith('http');
-          return (
-            <a aria-label={name} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} href={translatePath(href)} class="navbar-link">
-              {name}
-            </a>
-          );
-        })
-      }
-      <SelectI18n />
-      <button
-        class="flex items-center bg-green-600 px-1 rounded-md hover:scale-105 transition-transform h-10"
-      >
-        <div class="px-1">
-          <Download />
-        </div>
-        <span><strong>{i18n.download}</strong></span>
-      </button>
+    <div class="flex flex-col sm:flex-row h-full mt-14 md:mt-0 justify-center" transition:name="navbar">
+      <div class="flex flex-row justify-center">
+        {
+          navbarLinks.map(({ name, href }) => {
+            const isExternal = href.startsWith("http");
+            return (
+              <a
+                aria-label={name}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                href={translatePath(href)}
+                class="navbar-link"
+              >
+                {name}
+              </a>
+            );
+          })
+        }
+      </div>
+      <div class="flex flex-row items-center justify-center pt-2 sm:pt-0">
+        <SelectI18n />
+        <button
+          class="flex items-center bg-green-600 px-1 rounded-md hover:scale-105 transition-transform h-10"
+        >
+          <div class="px-1">
+            <Download />
+          </div>
+          <span><strong>{i18n.download}</strong></span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
 <style>
   nav {
-    position: sticky;
     top: 0px;
     animation: adjust-header linear both;
     animation-timeline: scroll();
@@ -101,7 +110,7 @@ const navbarLinks = [
     }
   }
   .navbar-link {
-    @apply text-white lg:text-base text-2xl  leading-6 mr-4 ml-4   2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2;
+    @apply text-white text-base leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 cursor-pointer font-normal md:font-medium hover:scale-110 transition duration-300 h-full pt-2;
   }
 
   .navIconPlay {

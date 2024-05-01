@@ -1,21 +1,32 @@
 ---
-import Description from "./Description.astro"
-import Video from "./Video.astro"
+import Description from "./Description.astro";
+import Video from "./Video.astro";
 
-const {index, title, description, src} = Astro.props
+const { index, title, description, src } = Astro.props;
 ---
-<section data-aos={"fade-up"} class="mb-44 mx-52">
-  <div class="flex items-center">
-    {index % 2 === 0 ? (
-    <Description title={title} description={description}/>
-    <div class="">
-      <Video src={src}/>
-    </div>
-    ) : (
-    <div class="">
-      <Video src={src}/>
-    </div>
-    <Description title={title} description={description}/>
-    )}
+
+<!-- mx-52 -->
+<section
+  data-aos={"fade-up"}
+  class="flex items-center justify-center mb-32 md:mb-44 mx-4 md:mx-4"
+>
+  <div class="">
+    {
+      index % 2 === 0 ? (
+        <div class="flex items-center text-left flex-col md:flex-row">
+          <Description title={title} description={description} />
+          <Video src={src} />
+        </div>
+      ) : (
+        <div class="flex items-center text-left md:text-right flex-col md:flex-row ">
+          <Video src={src} cls="order-2 md:order-1" />
+          <Description
+            title={title}
+            description={description}
+            cls="order-1 md:order-2"
+          />
+        </div>
+      )
+    }
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-const { src } = Astro.props;
+const { src, cls = "" } = Astro.props;
 ---
 
 <video
@@ -7,8 +7,7 @@ const { src } = Astro.props;
   muted
   playsinline
   onclick="this.paused ? this.play() : this.pause()"
-  class="lazy-video rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-video"
+  class=`lazy-video rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-video w-full max-w-[1000px] mt-6 md:mt-0 px-2 md:px-4 ${cls}`
   src={`/media/${src}`}
 >
-  <source type="video/mp4" /></video
->
+</video>
