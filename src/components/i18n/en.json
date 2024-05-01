@@ -3,13 +3,14 @@
     "navBar": {
         "home": "Home",
         "documentation": "Documentation",
-        "licence": "Licence",
+        "github": "GitHub",
         "contact": "Contact"
     },
-    "download": "Download for Free",
+    "download": "Download Free",
     "header": {
         "title": "Modern Music Player",
-        "subtitle": "Available for Windows, Mac y Linux"
+        "subtitle": "Desktop Application",
+        "available": "Available for Windows, Mac y Linux"
     },
     "otherPlatforms": {
         "title": "Other Platforms",
@@ -40,7 +41,20 @@
     },
     "footer": {
         "title": "Let's go, give it a try",
-        "socialMedias": "Social Media"
+        "socialMedias": "Social Medias",
+        "products": {
+            "title": "Products",
+            "mainPage": "Main Page",
+            "play": "Play",
+            "playFactory": "Play Factory",
+            "eterminal": "E-Terminal"
+        },
+        "options": {
+            "title": "Options",
+            "mainRepository": "Main Repository",
+            "issues": "Report Problems or Propose New Features",
+            "discussions": "Discussions"
+        }
     },
     "docsMainMenu": {
         "main-menu": {

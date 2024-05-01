@@ -3,13 +3,14 @@
     "navBar": {
         "home": "Inicio",
         "documentation": "Documentación",
-        "licence": "Licencia",
+        "github": "GitHub",
         "contact": "Contacto"
     },
     "download": "Descarga Gratis",
     "header": {
         "title": "Moderno Reproductor de Música",
-        "subtitle": "Disponible para Windows, Mac y Linux"
+        "subtitle": "Aplicacion de Escritorio",
+        "available": "Disponible para Windows, Mac y Linux"
     },
     "otherPlatforms": {
         "title": "Otras Plataformas",
@@ -40,7 +41,20 @@
     },
     "footer": {
         "title": "Vamos, dale una oportunidad",
-        "socialMedias": "Redes Sociales"
+        "socialMedias": "Redes Sociales",
+        "products": {
+            "title": "Productos",
+            "mainPage": "Página Principal",
+            "play": "Play",
+            "playFactory": "Play Factory",
+            "eterminal": "E-Terminal"
+        },
+        "options": {
+            "title": "Opciones",
+            "mainRepository": "Repositorio Principal",
+            "issues": "Reportar Problemas o Propone Nuevas Funcionalidades",
+            "discussions": "Discusiones"
+        }
     },
     "docsMainMenu": {
         "main-menu": {

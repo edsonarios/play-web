@@ -20,12 +20,12 @@ const navbarLinks = [
     href: "/docsMainMenu",
   },
   {
-    name: `${i18n.navBar.licence}`,
-    href: "#",
+    name: `${i18n.navBar.github}`,
+    href: "https://github.com/edsonarios/play",
   },
   {
     name: `${i18n.navBar.contact}`,
-    href: "#",
+    href: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
   },
 ];
 ---
@@ -60,8 +60,9 @@ const navbarLinks = [
     <div class="flex h-full" transition:name="navbar">
       {
         navbarLinks.map(({ name, href }) => {
+          const isExternal = href.startsWith('http');
           return (
-            <a aria-label={name} href={translatePath(href)} class="navbar-link">
+            <a aria-label={name} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined} href={translatePath(href)} class="navbar-link">
               {name}
             </a>
           );

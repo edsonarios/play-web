@@ -1,24 +1,71 @@
 ---
 import ButtonMac from "./ButtonMac.astro";
-import FacebookIcon from "../icons/FacebookIcon.astro";
-import TwitterIcon from "../icons/TwitterIcon.astro";
-import InstagramIcon from "../icons/InstagramIcon.astro";
+import E from "../icons/E.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import GitHub from "../icons/GitHub.astro";
 import { appName } from "../utils/constants";
+import { getI18N } from "./i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const socialMedias = {
+  title: i18n.footer.socialMedias,
+  items: [
+    {
+      name: "eDev",
+      icon: E,
+      url: "#",
+    },
+    {
+      name: "LinkedIn",
+      icon: LinkedIn,
+      url: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
+    },
+    {
+      name: "GitHub",
+      icon: GitHub,
+      url: "https://github.com/edsonarios",
+    },
+  ],
+};
 
 const footerData = [
   {
-    title: "Feature High",
-    items: ["Services", "About Us", "News and Stories", "Roadmap"],
+    title: i18n.footer.products.title,
+    items: [
+      {
+        name: i18n.footer.products.mainPage,
+        url: "https://edev.dev",
+      },
+      {
+        name: i18n.footer.products.play,
+        url: "https://play.edev.dev",
+      },
+      {
+        name: i18n.footer.products.playFactory,
+        url: "https://playfactory.edev.dev",
+      },
+      {
+        name: i18n.footer.products.eterminal,
+        url: "https://eterminal.edev.dev",
+      },
+    ],
   },
   {
-    title: "Important Links",
+    title: i18n.footer.options.title,
     items: [
-      "Organization Team",
-      "Our Journeys",
-      "Pricing Plans",
-      "Roadmap",
-      "Terms & Conditions",
-      "Privacy Policy",
+      {
+        name: i18n.footer.options.mainRepository,
+        url: "https://github.com/edsonarios/play",
+      },
+      {
+        name: i18n.footer.options.issues,
+        url: "https://github.com/edsonarios/play/issues",
+      },
+      {
+        name: i18n.footer.options.discussions,
+        url: "https://github.com/edsonarios/play/discussions",
+      },
     ],
   },
 ];
@@ -30,10 +77,12 @@ const footerData = [
 >
   <img src="/icon/playT.webp" class="w-24 mt-8" />
   <!-- Go on, give it a try -->
-  <h3 class="mt-6 -mb-16 text-xl">Vamos, dale una oportunidad</h3>
+  <h3 class="mt-6 -mb-16 text-xl">{i18n.footer.title}</h3>
   <ButtonMac />
 
-  <div class="w-full pt-10 lg:pt-20 lg:pb-12 bg-customDarkBg1 radius-for-skewed ">
+  <div
+    class="w-full pt-10 lg:pt-20 lg:pb-12 bg-customDarkBg1 radius-for-skewed"
+  >
     <div
       class="container mx-auto px-4 w-4/5 md:w-11/12 lg:w-10/12 xl:w-4/5 2xl:w-2/3"
     >
@@ -43,28 +92,22 @@ const footerData = [
             class="flex justify-center lg:justify-start items-center grow basis-0"
           >
             <div class="text-white mr-2 text-2xl">
-              <p>Social Medias</p>
+              <p>{socialMedias.title}</p>
             </div>
           </div>
           <div class="w-36 mx-auto lg:mx-0 mt-4 flex flex-row">
-            <a
-              class="inline-block w-10 h-10 mr-2 p-2 bg-customDarkBg2 custom-border-gray hover:bg-gray-700 rounded-xl"
-              href="#"
-            >
-              <FacebookIcon />
-            </a>
-            <a
-              class="inline-block w-10 h-10 mr-2 p-2 bg-customDarkBg2 custom-border-gray hover:bg-gray-700 rounded-xl"
-              href="#"
-            >
-              <TwitterIcon />
-            </a>
-            <a
-              class="inline-block w-10 h-10 mr-2 p-2 bg-customDarkBg2 custom-border-gray hover:bg-gray-700 rounded-xl"
-              href="#"
-            >
-              <InstagramIcon />
-            </a>
+            {
+              socialMedias.items.map((socialMedia) => (
+                <a
+                  class="inline-block w-10 h-10 mr-2 p-2 bg-customDarkBg2 custom-border-gray hover:bg-gray-700 rounded-xl"
+                  aria-label={socialMedia.name}
+                  target="_blank"
+                  href={socialMedia.url}
+                >
+                  <socialMedia.icon />
+                </a>
+              ))
+            }
           </div>
         </div>
         <div
@@ -72,7 +115,7 @@ const footerData = [
         >
           <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
             <h3 class="mb-6 text-2xl font-bold text-white">
-              Feature Highlights
+              {footerData[0].title}
             </h3>
             <ul>
               {
@@ -80,10 +123,10 @@ const footerData = [
                   <li class="mb-4">
                     <a
                       class="text-gray-400 hover:text-gray-300"
-                      href="#"
+                      href={item.url}
                       aria-label=""
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))
@@ -91,17 +134,19 @@ const footerData = [
             </ul>
           </div>
           <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
-            <h3 class="mb-6 text-2xl font-bold text-white">Links</h3>
+            <h3 class="mb-6 text-2xl font-bold text-white">
+              {footerData[1].title}
+            </h3>
             <ul>
               {
                 footerData[1].items.map((item, i) => (
                   <li class="mb-4">
                     <a
                       class="text-gray-400 hover:text-gray-300"
-                      href="#"
+                      href={item.url}
                       aria-label=""
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))

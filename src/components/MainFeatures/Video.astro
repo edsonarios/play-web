@@ -8,45 +8,7 @@ const { src } = Astro.props;
   playsinline
   onclick="this.paused ? this.play() : this.pause()"
   class="lazy-video rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-video"
-  data-src={`/media/${src}`}
+  src={`/media/${src}`}
 >
   <source type="video/mp4" /></video
 >
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const percentajeToVisible = 0.5;
-    const videos: IntersectionObserverCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (
-          entry.isIntersecting &&
-          entry.intersectionRatio > percentajeToVisible
-        ) {
-          const video = entry.target as any;
-          const source = video.querySelector("source");
-          source.src = video.dataset.src;
-          video.load();
-          video.addEventListener("loadeddata", () => {
-            video.style.opacity = 1;
-            video.previousElementSibling.style.opacity = 0;
-          });
-          observer.unobserve(video);
-        }
-      });
-    };
-
-    const observerOption = {
-      rootMargin: "0px",
-      threshold: percentajeToVisible,
-    };
-    const videoObserver = new IntersectionObserver(videos, observerOption);
-    document.querySelectorAll("video[data-src]").forEach((video) => {
-      videoObserver.observe(video);
-    });
-  });
-</script>
-<style>
-  .lazy-video {
-    opacity: 0;
-  }
-</style>
