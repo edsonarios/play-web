@@ -3,13 +3,14 @@ import Download from "@/icons/Download.astro";
 import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import ButtonDownload from "./ButtonDownload.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-const { showLogo = true } = Astro.props;
+const { showLogo = true, cls = "" } = Astro.props;
 const navbarLinks = [
   {
     name: `${i18n.navBar.home}`,
@@ -31,33 +32,37 @@ const navbarLinks = [
 ---
 
 <nav
-  class="navbar top-0 w-full h-36 md:h-24 flex flex-col justify-center items-center md:sticky bg-customDarkBg1 bg-customDarkBgTransparent z-40 backdrop-blur-xl"
+  class={`navbar top-0 w-full h-36 md:h-24 flex flex-col justify-center items-center md:sticky bg-customDarkBg1 bg-customDarkBgTransparent z-40 backdrop-blur-xl ${cls}`}
 >
   <div
     class={`2xl:w-[1280px] xl:w-10/12 w-11/12 flex flex-col md:flex-row ${showLogo === true ? "justify-around" : "justify-end"}`}
   >
-    {
-      showLogo === true && (
-        <a class="flex h-full place-self-center ml-32 sm:ml-28 md:ml-0" href={translatePath("/")}>
-          <div class="relative w-80">
-            <img
-              src="/icon/iconPlay.webp"
-              alt="played logo"
-              class="navIconPlay left-[127px] smaller-logo"
-              id="navbarLogo"
-            />
-            <img
-              src="/icon/eDevPlay.webp"
-              alt="played logo"
-              class="navIconPlay left-0 original-logo"
-              id="navbarLogo"
-              transition:name="logo"
-            />
-          </div>
-        </a>
-      )
-    }
-    <div class="flex flex-col sm:flex-row h-full mt-14 md:mt-0 justify-center" transition:name="navbar">
+    <a
+      class={`flex h-full place-self-center ml-32 sm:ml-28 md:ml-0
+      ${showLogo === true ? "" : "inline-flex flex-wrap md:hidden"}`}
+      href={translatePath("/")}
+    >
+      <div class="relative w-80">
+        <img
+          src="/icon/iconPlay.webp"
+          alt="played logo"
+          class="navIconPlay left-[127px] smaller-logo"
+          id="navbarLogo"
+        />
+        <img
+          src="/icon/eDevPlay.webp"
+          alt="played logo"
+          class="navIconPlay left-0 original-logo"
+          id="navbarLogo"
+          transition:name="logo"
+        />
+      </div>
+    </a>
+
+    <div
+      class="flex flex-col sm:flex-row h-full mt-14 md:mt-0 justify-center"
+      transition:name="navbar"
+    >
       <div class="flex flex-row justify-center">
         {
           navbarLinks.map(({ name, href }) => {
@@ -78,14 +83,7 @@ const navbarLinks = [
       </div>
       <div class="flex flex-row items-center justify-center pt-2 sm:pt-0">
         <SelectI18n />
-        <button
-          class="flex items-center bg-green-600 px-1 rounded-md hover:scale-105 transition-transform h-10"
-        >
-          <div class="px-1">
-            <Download />
-          </div>
-          <span><strong>{i18n.download}</strong></span>
-        </button>
+        <ButtonDownload />
       </div>
     </div>
   </div>

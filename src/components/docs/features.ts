@@ -55,7 +55,7 @@ export const docsMainMenu: IDocFeatures[] = [
   {
     title: "Botón '+' de la sección de Librería",
     depth: 2,
-    slug: "button-plus",
+    slug: "a-button-plus",
     src: "a-button-plus.mp4",
     description: [
       "Crea una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción",

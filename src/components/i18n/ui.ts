@@ -1,4 +1,3 @@
-// Add missing imports
 export const LANGUAGES: Record<
 	string,
 	{ code: string; name: string; }
@@ -10,6 +9,20 @@ export const LANGUAGES: Record<
 	es: {
 		code: 'es',
 		name: 'Español',
+	},
+};
+
+export const LANGUAGES_SMALL: Record<
+	string,
+	{ code: string; name: string; }
+> = {
+	en: {
+		code: 'en',
+		name: 'EN',
+	},
+	es: {
+		code: 'es',
+		name: 'ES',
 	},
 };
 

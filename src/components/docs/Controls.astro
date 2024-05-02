@@ -9,7 +9,7 @@ const i18n = getI18N({ currentLocale });
 const translatedDocsControls = translateDoc(docsControls, i18n.docsControls);
 ---
 
-<main class="content bg-zinc-900 pl-[350px] grow">
+<main class="content">
   {
     translatedDocsControls.map(({ depth, title, slug, description, src }) => {
       return (

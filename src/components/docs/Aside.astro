@@ -26,7 +26,7 @@ const docFeatures = {
 };
 ---
 
-<aside id="sidebar" class="bg-[#1d1e26]">
+<aside id="sidebar" class="bg-[#1d1e26] hidden md:inline-flex flex-wrap">
   <a class="flex h-full place-self-center mb-6" href={translatePath("/")}>
     <img
       src="/icon/eDevPlay.webp"
@@ -45,7 +45,7 @@ const docFeatures = {
               href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
             >
               <div
-                class={`pb-2 ${description ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
+                class={`pb-2 ${description && description.length > 0 ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
               >
                 <li
                   data-id={slug}

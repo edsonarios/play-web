@@ -3,12 +3,14 @@ import Aside from "../docs/Aside.astro";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../NavBar/Navbar.astro";
 import Options from "../docs/Options.astro";
+import HiddenMenu from "../docs/HiddenMenu.astro";
 ---
 
 <Layout title="Documentacion">
-  <Navbar showLogo=false />
+  <Navbar showLogo=false cls='hidden md:inline-flex flex-wrap' />
   <section class="flex min-h-screen">
     <Aside />
     <Options />
   </section>
+  <HiddenMenu />
 </Layout>

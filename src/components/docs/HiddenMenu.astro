@@ -1,0 +1,150 @@
+---
+import Dropdown from "@/icons/Dropdown.astro";
+import { getI18N } from "../i18n";
+import { useTranslatedPath } from "../i18n/utils";
+import { getLangFromUrl, useTranslatedPathDocs } from "../i18n/utils";
+import {
+  docsMainMenu,
+  docsMainBody,
+  docsControls,
+  docsOptions,
+  translateDoc,
+} from "./features";
+import ButtonDownloadS from "../NavBar/ButtonDownloadS.astro";
+import SelectI18NS from "../i18n/SelectI18nS.astro";
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const translatePathDocs = useTranslatedPathDocs(lang);
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const translatedDocsMainMenu = translateDoc(docsMainMenu, i18n.docsMainMenu);
+const translatedDocsMainBody = translateDoc(docsMainBody, i18n.docsMainBody);
+const translatedDocsControls = translateDoc(docsControls, i18n.docsControls);
+const translatedDocsOptions = translateDoc(docsOptions, i18n.docsOptions);
+const docFeatures = {
+  docsMainMenu: [...translatedDocsMainMenu],
+  docsMainBody: [...translatedDocsMainBody],
+  docsControls: [...translatedDocsControls],
+  docsOptions: [...translatedDocsOptions],
+};
+const navbarLinks = [
+  {
+    name: `${i18n.navBar.home}`,
+    href: "/",
+  },
+  {
+    name: `${i18n.navBar.documentation}`,
+    href: "/docsMainMenu",
+  },
+  {
+    name: `${i18n.navBar.github}`,
+    href: "https://github.com/edsonarios/play",
+  },
+  {
+    name: `${i18n.navBar.contact}`,
+    href: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
+  },
+];
+---
+
+<section class="md:hidden z-20 top-0 left-0">
+  <div
+    class="z-20 fixed w-full bg-[#1d1e26] h-14 top-0 flex justify-between p-2"
+  >
+    <a class="left-0 transition-all hover:scale-105" href={translatePath("/")}>
+      <img
+        src="/icon/play.webp"
+        alt="played logo"
+        class="h-10 hover:scale-105 transition-transform"
+        transition:name="logo"
+      />
+    </a>
+    <div class="w-full flex flex-row justify-between items-center mx-8">
+      {
+        navbarLinks.map(({ name, href }) => {
+          const isExternal = href.startsWith("http");
+          return (
+            <a
+              aria-label={name}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              href={translatePath(href)}
+              class="text-white transition-all hover:scale-105"
+            >
+              {name}
+            </a>
+          );
+        })
+      }
+      <SelectI18NS />
+      <ButtonDownloadS />
+    </div>
+    <button
+      id="menuButton"
+      class="z-30 rounded-full hover:bg-gray-600 transition-all hover:scale-105 right-0"
+    >
+      <Dropdown />
+    </button>
+  </div>
+
+  <!-- Menu  -->
+  <div id="dropdownMenu" class="bg-[#1d1e26] fixed top-12 w-full h-full hidden">
+    <ul class="list-none">
+      {
+        Object.entries(docFeatures).map(([docsSection, features]) => {
+          return features.map(({ depth, title, slug, description }) => {
+            return (
+              <a
+                class={`${!description || description.length === 0 ? "text-xl text-white" : "text-sm"}`}
+                href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
+              >
+                <div
+                  class={`pb-2 ${description && description.length > 0 ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
+                >
+                  <li
+                    data-id={slug}
+                    class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
+                ${depth === 2 ? "ml-4" : ""}`}
+                  >
+                    {title}
+                  </li>
+                </div>
+              </a>
+            );
+          });
+        })
+      }
+    </ul>
+  </div>
+</section>
+<style>
+  #sidebar li.active {
+    background-color: #42c973;
+    color: black;
+  }
+  #dropdownMenu {
+    /* position: fixed; */
+    /* flex-shrink: 0; */
+    z-index: 20;
+    /* top: 0px; */
+    /* padding-top: 30px;
+    padding-left: 30px;
+    width: 320px; */
+    max-height: calc(100vh);
+    overflow-y: auto;
+    padding-bottom: 1rem;
+    animation: adjust-aside linear both;
+    animation-timeline: scroll();
+    animation-range: 0 400px;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menuButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    menuButton?.addEventListener("click", () => {
+      dropdownMenu?.classList.toggle("hidden");
+    });
+  });
+</script>

@@ -77,9 +77,9 @@
                 "2": "You can also use the shortcut key 'O'"
             }
         },
-        "button-plus": {
+        "a-button-plus": {
             "title": "'+' button in the Library section",
-            "slug": "button-plus",
+            "slug": "a-button-plus",
             "description": {
                 "1": "Create a new playlist section, where you can create new playlists and thus keep your playlists organized"
             }

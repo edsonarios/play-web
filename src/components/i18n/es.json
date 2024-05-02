@@ -77,9 +77,9 @@
                 "2": "También puedes usar la tecla de atajo 'O'"
             }
         },
-        "button-plus": {
+        "a-button-plus": {
             "title": "Botón '+' de la sección de Librería",
-            "slug": "button-plus",
+            "slug": "a-button-plus",
             "description": {
                 "1": "Crea una nueva sección de listas de reproducción, donde podrás crear nuevas listas de reproducción y así mantener ordenado tus listas de reproducción"
             }

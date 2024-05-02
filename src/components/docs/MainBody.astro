@@ -9,7 +9,7 @@ const i18n = getI18N({ currentLocale });
 const translatedDocsMainBody = translateDoc(docsMainBody, i18n.docsMainBody);
 ---
 
-<main class="content bg-zinc-900 pl-[350px] grow">
+<main class="content">
   {
     translatedDocsMainBody.map(({ depth, title, slug, description, src }) => {
       return (
