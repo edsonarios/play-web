@@ -2,7 +2,7 @@
 const { title, description, cls = "" } = Astro.props;
 ---
 
-<div class={`w-full md:max-w-[400px] px-2 md:px-4 ${cls}`}>
+<div class={`w-full md:min-w-[250px] md:max-w-[400px] px-2 md:px-4 ${cls}`}>
   <h3 class="text-3xl md:text-4xl text-balance text">
     <strong>{title}</strong>
   </h3>

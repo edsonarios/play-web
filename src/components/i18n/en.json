@@ -43,14 +43,14 @@
         "title": "Let's go, give it a try",
         "socialMedias": "Social Medias",
         "products": {
-            "title": "Products",
+            "title": "Our Products",
             "mainPage": "Main Page",
             "play": "Play",
             "playFactory": "Play Factory",
             "eterminal": "E-Terminal"
         },
         "options": {
-            "title": "Options",
+            "title": "Resources",
             "mainRepository": "Main Repository",
             "issues": "Report Problems or Propose New Features",
             "discussions": "Discussions"

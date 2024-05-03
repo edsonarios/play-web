@@ -10,23 +10,21 @@ const { index, title, description, src } = Astro.props;
   data-aos={"fade-up"}
   class="flex items-center justify-center mb-32 md:mb-44 mx-4 md:mx-4"
 >
-  <div class="">
-    {
-      index % 2 === 0 ? (
-        <div class="flex items-center text-left flex-col md:flex-row">
-          <Description title={title} description={description} />
-          <Video src={src} />
-        </div>
-      ) : (
-        <div class="flex items-center text-left md:text-right flex-col md:flex-row ">
-          <Video src={src} cls="order-2 md:order-1" />
-          <Description
-            title={title}
-            description={description}
-            cls="order-1 md:order-2"
-          />
-        </div>
-      )
-    }
-  </div>
+  {
+    index % 2 === 0 ? (
+      <div class="flex items-center text-left flex-col md:flex-row">
+        <Description title={title} description={description} />
+        <Video src={src} />
+      </div>
+    ) : (
+      <div class="flex items-center text-left md:text-right flex-col md:flex-row ">
+        <Video src={src} cls="order-2 md:order-1" />
+        <Description
+          title={title}
+          description={description}
+          cls="order-1 md:order-2"
+        />
+      </div>
+    )
+  }
 </section>
