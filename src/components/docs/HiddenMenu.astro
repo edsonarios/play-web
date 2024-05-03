@@ -12,11 +12,14 @@ import {
 } from "./features";
 import ButtonDownloadS from "../NavBar/ButtonDownloadS.astro";
 import SelectI18NS from "../i18n/SelectI18nS.astro";
+import { appName } from "@/utils/constants";
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 const translatePathDocs = useTranslatedPathDocs(lang);
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+const routeActual = Astro.url.pathname.split("/").pop();
+
 const translatedDocsMainMenu = translateDoc(docsMainMenu, i18n.docsMainMenu);
 const translatedDocsMainBody = translateDoc(docsMainBody, i18n.docsMainBody);
 const translatedDocsControls = translateDoc(docsControls, i18n.docsControls);
@@ -88,23 +91,30 @@ const navbarLinks = [
   </div>
 
   <!-- Menu  -->
-  <div id="dropdownMenu" class="bg-[#1d1e26] fixed top-12 w-full h-full hidden">
+  <div
+    id="dropdownMenu"
+    class="bg-zinc-900 fixed top-14 w-full h-full hidden pl-6 pt-4 pb-20"
+  >
     <ul class="list-none">
       {
         Object.entries(docFeatures).map(([docsSection, features]) => {
           return features.map(({ depth, title, slug, description }) => {
             return (
               <a
-                class={`${!description || description.length === 0 ? "text-xl text-white" : "text-sm"}`}
+                class={`${!description || description.length === 0 ? "text-xl text-white" : "text-sm text-gray-400 "}
+                `}
                 href={`${translatePathDocs(slug, Astro.url.pathname, docsSection)}`}
               >
                 <div
                   class={`pb-2 ${description && description.length > 0 ? "border-l-2 border-gray-500 hover:border-white" : ""}`}
                 >
                   <li
+                    id="listDocs"
                     data-id={slug}
-                    class={`text-gray-400 hover:text-white rounded-md p-1 max-w-60
-                ${depth === 2 ? "ml-4" : ""}`}
+                    class={`hover:text-white rounded-md p-1 w-full
+                ${depth === 2 ? "ml-4" : ""}
+                ${!description || (description.length === 0 && routeActual === docsSection) ? "bg-green-500 text-black" : ""}
+                `}
                   >
                     {title}
                   </li>
@@ -115,6 +125,11 @@ const navbarLinks = [
         })
       }
     </ul>
+    <p
+      class="text-center text-sm text-gray-100 border-t border-[rgb(255,255,255,0.2)] pt-6 md:pt-12 md:mt-16 block mb-8 mt-8"
+    >
+      &copy; 2024 {appName} - MIT license.
+    </p>
   </div>
 </section>
 <style>
@@ -123,28 +138,29 @@ const navbarLinks = [
     color: black;
   }
   #dropdownMenu {
-    /* position: fixed; */
-    /* flex-shrink: 0; */
     z-index: 20;
-    /* top: 0px; */
-    /* padding-top: 30px;
-    padding-left: 30px;
-    width: 320px; */
-    max-height: calc(100vh);
-    overflow-y: auto;
+    max-height: calc(94vh);
+    overflow-x: hidden;
     padding-bottom: 1rem;
     animation: adjust-aside linear both;
     animation-timeline: scroll();
     animation-range: 0 400px;
   }
 </style>
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const menuButton = document.getElementById("menuButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
-
     menuButton?.addEventListener("click", () => {
       dropdownMenu?.classList.toggle("hidden");
+    });
+
+    const listDocs = document.querySelectorAll("#listDocs");
+    listDocs?.forEach((item) => {
+      item.addEventListener("click", () => {
+        dropdownMenu?.classList.toggle("hidden");
+      });
     });
   });
 </script>
