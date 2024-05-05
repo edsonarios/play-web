@@ -5,6 +5,6 @@ export function aosInit() {
   AOS.init({
     duration: 1000,
     delay: 150,
-    // once: true,
+    once: true,
   })
 }

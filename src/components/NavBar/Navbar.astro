@@ -1,5 +1,4 @@
 ---
-import Download from "@/icons/Download.astro";
 import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
@@ -45,13 +44,13 @@ const navbarLinks = [
       <div class="relative w-80">
         <img
           src="/icon/iconPlay.webp"
-          alt="played logo"
+          alt="play full logo"
           class="navIconPlay left-[127px] smaller-logo"
           id="navbarLogo"
         />
         <img
           src="/icon/eDevPlay.webp"
-          alt="played logo"
+          alt="play small logo"
           class="navIconPlay left-0 original-logo"
           id="navbarLogo"
           transition:name="logo"

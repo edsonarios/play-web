@@ -1,5 +1,6 @@
 ---
 const { depth, src } = Astro.props;
+const URL = import.meta.env.URL_CDN || '/media/';
 ---
 
 <div class="group">
@@ -9,7 +10,7 @@ const { depth, src } = Astro.props;
     playsinline
     onclick="this.paused ? this.play() : this.pause()"
     class={`lazy-video ${depth === 2 ? "ml-8" : ""} w-[1000px] transition-all duration-500 ease-in-out opacity`}
-    data-src={`/media/${src}`}
+    data-src={`${URL}${src}`}
   >
     <source type="video/mp4" /></video
   >
