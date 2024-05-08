@@ -2,7 +2,7 @@
 import Dropdown from "@/icons/Dropdown.astro";
 import { getI18N } from "../i18n";
 import { useTranslatedPath } from "../i18n/utils";
-import { getLangFromUrl, useTranslatedPathDocs } from "../i18n/utils";
+import { getLangFromUrl, useTranslatedPathDocs, normalizePath } from "../i18n/utils";
 import {
   docsMainMenu,
   docsMainBody,
@@ -18,7 +18,7 @@ const translatePath = useTranslatedPath(lang);
 const translatePathDocs = useTranslatedPathDocs(lang);
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const routeActual = Astro.url.pathname.split("/").pop();
+const routeActual = normalizePath(Astro.url.pathname)
 
 const translatedDocsMainMenu = translateDoc(docsMainMenu, i18n.docsMainMenu);
 const translatedDocsMainBody = translateDoc(docsMainBody, i18n.docsMainBody);
@@ -71,7 +71,7 @@ const navbarLinks = [
               aria-label={name}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              href={isExternal ? href: translatePath(href)}
+              href={isExternal ? href : translatePath(href)}
               class="text-white transition-all hover:scale-105"
             >
               {name}
@@ -99,6 +99,9 @@ const navbarLinks = [
       {
         Object.entries(docFeatures).map(([docsSection, features]) => {
           return features.map(({ depth, title, slug, description }) => {
+            const isActive =
+              !description ||
+              (description.length === 0 && routeActual === docsSection);
             return (
               <a
                 class={`${!description || description.length === 0 ? "text-xl text-white" : "text-sm text-gray-400 "}
@@ -113,7 +116,7 @@ const navbarLinks = [
                     data-id={slug}
                     class={`hover:text-white rounded-md p-1 w-full
                 ${depth === 2 ? "ml-4" : ""}
-                ${!description || (description.length === 0 && routeActual === docsSection) ? "bg-green-500 text-black" : ""}
+                ${isActive ? "bg-green-500 text-black" : ""}
                 `}
                   >
                     {title}
@@ -148,7 +151,7 @@ const navbarLinks = [
   }
 </style>
 
-<script type="module">
+<script>
   document.addEventListener("astro:page-load", () => {
     const menuButton = document.getElementById("menuButton");
     const dropdownMenu = document.getElementById("dropdownMenu");

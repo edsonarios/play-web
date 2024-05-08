@@ -14,7 +14,10 @@ const lang = getLangFromUrl(Astro.url);
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="eDev Play - Modern Music Player" content="Desktop Application" />
+    <meta
+      name="eDev Play - Modern Music Player"
+      content="Desktop Application"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/icon/playIcon.webp" />
     <meta name="generator" content={Astro.generator} />
@@ -151,45 +154,5 @@ const lang = getLangFromUrl(Astro.url);
     );
 
     svgs.forEach((svg) => observer.observe(svg));
-  });
-</script>
-
-<!-- Aside Docs Intersection Observer -->
-<script type="module">
-  document.addEventListener("astro:page-load", () => {
-    const setCurrent = (entries) => {
-      for (let entry of entries) {
-        const { id } = entry.target;
-        const aElement = document.querySelector(`#sidebar a[href="#${id}"]`);
-        const liElement = document.querySelector(
-          `#sidebar li[data-id="${id}"]`
-        );
-        if (!aElement) return;
-        if (!liElement) return;
-
-        if (entry.isIntersecting) {
-          document
-            .querySelectorAll("#sidebar a")
-            .forEach((e) => e.classList.remove("active"));
-          document
-            .querySelectorAll("#sidebar li")
-            .forEach((e) => e.classList.remove("active"));
-          aElement.classList.add("active");
-          liElement.classList.add("active");
-        }
-      }
-    };
-
-    const observerOption = {
-      rootMargin: "0px 0px 0px 0px",
-      threshold: 0.5,
-    };
-    const headingObserver = new IntersectionObserver(
-      setCurrent,
-      observerOption
-    );
-    document.querySelectorAll(".content section").forEach((heading) => {
-      headingObserver.observe(heading);
-    });
   });
 </script>

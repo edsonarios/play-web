@@ -35,7 +35,7 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 
 export function useTranslatedPathDocs(lang: keyof typeof ui) {
 	return function translatePathDocs(path: string, route: string | undefined, docsSection: string) {
-		const actualRouteParse = route?.split('/').pop();
+		let actualRouteParse = normalizePath(route || '')
 		if (actualRouteParse === docsSection) {
 			return `#${path}`
 		}
@@ -45,6 +45,18 @@ export function useTranslatedPathDocs(lang: keyof typeof ui) {
 			return `/${lang}/${docsSection}#${path}`
 		}
 	};
+}
+
+// getRouteFromUrl
+// prod en/docsControls/ -> docsControls
+// dev en/docsControls -> docsControls
+export function normalizePath(path: string): string {
+	if (path.endsWith('/')) {
+		const pathSplited = path.split('/');
+		return pathSplited[pathSplited.length - 2];
+	} else {
+		return path.split('/').pop() || '';
+	}
 }
 
 export function getRouteFromUrl(url: URL): string | undefined {

@@ -89,6 +89,46 @@ const docFeatures = {
     animation-range: 0 400px;
   }
 </style>
+<!-- Aside Docs Intersection Observer -->
+<script type="module">
+  document.addEventListener("astro:page-load", () => {
+    const setCurrent = (entries) => {
+      for (let entry of entries) {
+        const { id } = entry.target;
+        const aElement = document.querySelector(`#sidebar a[href="#${id}"]`);
+        const liElement = document.querySelector(
+          `#sidebar li[data-id="${id}"]`
+        );
+        if (!aElement) return;
+        if (!liElement) return;
+
+        if (entry.isIntersecting) {
+          document
+            .querySelectorAll("#sidebar a")
+            .forEach((e) => e.classList.remove("active"));
+          document
+            .querySelectorAll("#sidebar li")
+            .forEach((e) => e.classList.remove("active"));
+          aElement.classList.add("active");
+          liElement.classList.add("active");
+        }
+      }
+    };
+
+    const observerOption = {
+      rootMargin: "0px 0px 0px 0px",
+      threshold: 0.5,
+    };
+    const headingObserver = new IntersectionObserver(
+      setCurrent,
+      observerOption
+    );
+    document.querySelectorAll(".content section").forEach((heading) => {
+      headingObserver.observe(heading);
+    });
+  });
+</script>
+
 <script>
   // Scroll to aside active element
   // document.addEventListener("astro:page-load", () => {
