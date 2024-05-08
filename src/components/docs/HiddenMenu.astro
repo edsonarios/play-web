@@ -71,7 +71,7 @@ const navbarLinks = [
               aria-label={name}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              href={translatePath(href)}
+              href={isExternal ? href: translatePath(href)}
               class="text-white transition-all hover:scale-105"
             >
               {name}
@@ -148,7 +148,7 @@ const navbarLinks = [
   }
 </style>
 
-<script>
+<script type="module">
   document.addEventListener("astro:page-load", () => {
     const menuButton = document.getElementById("menuButton");
     const dropdownMenu = document.getElementById("dropdownMenu");

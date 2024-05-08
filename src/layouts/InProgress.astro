@@ -1,0 +1,36 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { getLangFromUrl } from "@/components/i18n/utils";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/icon/playIcon.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#19181b]">
+    <ViewTransitions />
+    <div class="flex items-center justify-center flex-col h-screen w-full">
+      <div class="h-10">
+        <img
+          src="/icon/eDev.webp"
+          alt="play logo"
+          class="h-14"
+        />
+      </div>
+      <p class="mt-10 text-center text-white text-5xl">Web in Progress...</p>
+    </div>
+  </body>
+</html>

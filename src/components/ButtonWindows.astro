@@ -1,15 +1,20 @@
 ---
 import WIndowsSmall from "../icons/WindowsSmall.astro";
+import { windowsLink } from "@/utils/binariesLinks";
 import { getI18N } from "./i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
 <section class="flex justify-center mt-20">
-  <button class="button bg-green-600 rounded-2xl text-[25px] md:text-[30px]">
+  <a
+    class="button bg-green-600 rounded-2xl text-[25px] md:text-[30px]"
+    rel="noopener noreferrer"
+    href={windowsLink}
+  >
     <WIndowsSmall />
     {i18n.download}
-  </button>
+  </a>
 </section>
 <style>
   .button {

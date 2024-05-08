@@ -1,7 +1,5 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Navbar from "../components/NavBar/Navbar.astro";
-import Footer from "../components/Footer.astro";
 import { getLangFromUrl } from "@/components/i18n/utils";
 
 interface Props {
@@ -16,7 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="eDev Play - Modern Music Player" content="Desktop Application" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/icon/playIcon.webp" />
     <meta name="generator" content={Astro.generator} />
@@ -24,9 +22,7 @@ const lang = getLangFromUrl(Astro.url);
   </head>
   <body>
     <ViewTransitions />
-    <!-- <Navbar /> -->
     <slot />
-    <!-- <Footer /> -->
   </body>
 </html>
 
@@ -159,9 +155,9 @@ const lang = getLangFromUrl(Astro.url);
 </script>
 
 <!-- Aside Docs Intersection Observer -->
-<script>
+<script type="module">
   document.addEventListener("astro:page-load", () => {
-    const setCurrent: IntersectionObserverCallback = (entries) => {
+    const setCurrent = (entries) => {
       for (let entry of entries) {
         const { id } = entry.target;
         const aElement = document.querySelector(`#sidebar a[href="#${id}"]`);

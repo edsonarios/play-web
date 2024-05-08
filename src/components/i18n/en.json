@@ -52,7 +52,7 @@
         "options": {
             "title": "Resources",
             "mainRepository": "Main Repository",
-            "issues": "Report Problems or Propose New Features",
+            "issues": "Report Issues or Propose New Features",
             "discussions": "Discussions"
         }
     },

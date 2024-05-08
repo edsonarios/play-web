@@ -5,6 +5,7 @@ import Linux from "../icons/Linux.astro";
 import Mac from "../icons/Mac.astro";
 import Windows from "../icons/Windows.astro";
 import { getI18N } from "./i18n";
+import { linuxLink, macLink, windowsLink } from "@/utils/binariesLinks";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 const platforms = [
@@ -12,19 +13,19 @@ const platforms = [
     name: "Windows",
     icon: Windows,
     download: "64 Bit",
-    link: "",
+    link: windowsLink,
   },
   {
     name: "Mac",
     icon: Mac,
     download: "Universal",
-    link: "",
+    link: macLink,
   },
   {
     name: "Linux",
     icon: Linux,
     download: "64 Bit",
-    link: "",
+    link: linuxLink,
   },
 ];
 ---
@@ -55,14 +56,11 @@ const platforms = [
                 <platform.icon />
               </div>
               <div class="flex-grow items-center md:mt-10">
-                <h2 class="text-lg title-font font-medium">
-                  {platform.name}
-                </h2>
+                <h2 class="text-lg title-font font-medium">{platform.name}</h2>
                 <a
                   class="md:mt-3 text-indigo-400 inline-flex items-center hover:scale-105 transition-all"
-                  href={platform.link}
-                  target="_blank"
                   rel="noopener noreferrer"
+                  href={platform.link}
                 >
                   <h3 class="mr-4">
                     {platform.download} - {i18n.otherPlatforms.download}

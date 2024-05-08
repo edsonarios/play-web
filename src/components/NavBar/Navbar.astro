@@ -71,7 +71,7 @@ const navbarLinks = [
                 aria-label={name}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-                href={translatePath(href)}
+                href={isExternal ? href: translatePath(href)}
                 class="navbar-link"
               >
                 {name}

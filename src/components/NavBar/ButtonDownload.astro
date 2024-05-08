@@ -1,15 +1,18 @@
 ---
 import Download from "@/icons/Download.astro";
 import { getI18N } from "../i18n";
+import { windowsLink } from "@/utils/binariesLinks";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<button
+<a
   class="flex items-center bg-green-600 px-1 rounded-md hover:scale-105 transition-transform h-10"
+  rel="noopener noreferrer"
+  href={windowsLink}
 >
   <div class="px-1">
     <Download />
   </div>
   <span><strong>{i18n.download}</strong></span>
-</button>
+</a>

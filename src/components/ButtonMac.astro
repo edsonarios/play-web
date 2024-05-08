@@ -1,15 +1,20 @@
 ---
 import MacSmall from "../icons/MacSmall.astro";
+import { macLink } from "@/utils/binariesLinks";
 import { getI18N } from "./i18n";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
 <section class="flex justify-center mt-20">
-  <button class="button bg-green-600 rounded-2xl">
+  <a
+    class="button bg-green-600 rounded-2xl"
+    rel="noopener noreferrer"
+    href={macLink}
+  >
     <MacSmall />
     {i18n.download}
-  </button>
+  </a>
 </section>
 <style>
   .button {
