@@ -1,0 +1,68 @@
+---
+const { depth, src } = Astro.props;
+const URL = import.meta.env.URL_CDN || "/media/";
+---
+
+<div data-aos={"fade-up"} class="group relative">
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div id="spinner" class="loader"></div>
+  </div>
+  <video
+    autoplay
+    muted
+    playsinline
+    onclick="this.paused ? this.play() : this.pause()"
+    class={`lazy-video ${depth === 2 ? "ml-8" : ""} w-[1000px] transition-all duration-500 ease-in-out opacity`}
+    src={`${URL}${src}`}
+  >
+  </video>
+  <div class="text-left ml-8 mt-2">
+    <p class="text-sm text-gray-500 opacity-5 group-hover:opacity-100">
+      Click to play/pause
+    </p>
+  </div>
+</div>
+<script>
+  function initializeVideoObservers() {
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      if (video.dataset.loaded !== "true") {
+        video.addEventListener("loadeddata", () => {
+          video.style.opacity = "1";
+          const loader = video.previousElementSibling;
+          if (loader) {
+            const loaderElement = loader as HTMLElement;
+            loaderElement.style.display = "none";
+          }
+          video.dataset.loaded = "true";
+        });
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", initializeVideoObservers);
+  document.addEventListener("astro:page-load", initializeVideoObservers);
+</script>
+
+<style>
+  .lazy-video {
+    opacity: 0;
+  }
+  /* Spinner Custom */
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #42c973;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
