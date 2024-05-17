@@ -8,7 +8,7 @@ const URL = import.meta.env.URL_CDN || '/media/';
   muted
   playsinline
   onclick="this.paused ? this.play() : this.pause()"
-  class=`lazy-video rounded-lg h-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-video w-full md:min-w-[700px] md:max-w-[1000px] mt-6 md:mt-0 px-2 md:px-4 ${cls}`
+  class=`lazy-video rounded-lg h-full object-contain group-hover:scale-105 transition-transform duration-300 aspect-video w-full md:min-w-[700px] md:max-w-[1000px] mt-6 md:mt-0 px-2 md:px-4 ${cls}`
   src={`${URL}${src}`}
 >
 </video>
