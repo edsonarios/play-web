@@ -6,10 +6,12 @@
         "github": "GitHub",
         "contact": "Contacto"
     },
-    "download": "Descarga Gratis",
+    "download": "Descarga",
+    "downloadIn": "Descarga en",
+    "downloadInWindows": "Descarga en windows",
     "header": {
-        "title": "Moderno Reproductor de Música",
-        "subtitle": "Aplicacion de Escritorio",
+        "title": "Moderno reproductor de música",
+        "subtitle": "Aplicación de Escritorio",
         "available": "Disponible para Windows, Mac y Linux"
     },
     "otherPlatforms": {

@@ -6,7 +6,59 @@ import { windowsLink } from "@/utils/binariesLinks";
 <a
   class="flex items-center bg-green-600 rounded-md hover:scale-105 transition-transform px-2 py-1"
   rel="noopener noreferrer"
+  id="navS-download-button"
   href={windowsLink}
 >
   <Download size="20" />
 </a>
+<script>
+  import { linuxLink, macLink, windowsLink } from "@/utils/binariesLinks";
+  document.addEventListener("astro:page-load", function () {
+    function getOS() {
+      const userAgent =
+        navigator.userAgent || navigator.vendor || (window as any).opera;
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows";
+      }
+
+      if (/win/i.test(userAgent)) {
+        return "Windows";
+      }
+
+      if (/mac/i.test(userAgent)) {
+        return "Mac";
+      }
+
+      if (/linux/i.test(userAgent)) {
+        return "Linux";
+      }
+
+      return "Other";
+    }
+    if (typeof window !== "undefined") {
+      const os = getOS();
+      const downloadButton = document.getElementById(
+        "navS-download-button"
+      ) as HTMLAnchorElement;
+      if (downloadButton) {
+        let downloadLink;
+        switch (os) {
+          case "Windows":
+            downloadLink = windowsLink;
+            break;
+          case "Mac":
+            downloadLink = macLink;
+            break;
+          case "Linux":
+            downloadLink = linuxLink;
+            break;
+          default:
+            downloadLink = windowsLink;
+            break;
+        }
+
+        downloadButton.href = downloadLink;
+      }
+    }
+  });
+</script>

@@ -131,28 +131,31 @@ const lang = getLangFromUrl(Astro.url);
 </script>
 
 <!-- Animatation Other Platforms icons -->
-<script type="module">
+<script>
+  let cont = 0;
   document.addEventListener("astro:page-load", function () {
     const svgs = document.querySelectorAll(".icon-animated");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animation = "none";
+            console.log(cont);
+            if (cont >= 3) return;
+            (entry.target as HTMLElement).style.animation = "none";
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
-                entry.target.style.animation = "dash 1s ease-in forwards";
+                (entry.target as HTMLElement).style.animation =
+                  "dash 1s ease-in forwards";
               });
+              cont++;
             });
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.8,
       }
     );
-
     svgs.forEach((svg) => observer.observe(svg));
   });
 </script>

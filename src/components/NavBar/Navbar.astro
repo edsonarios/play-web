@@ -1,4 +1,5 @@
 ---
+import ArrowLink from "@/icons/ArrowLink.astro";
 import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
@@ -24,7 +25,7 @@ const navbarLinks = [
     href: "https://github.com/edsonarios/play",
   },
   {
-    name: `${i18n.navBar.contact}`,
+    name: 'LinkedIn',
     href: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
   },
 ];
@@ -62,7 +63,7 @@ const navbarLinks = [
       class="flex flex-col sm:flex-row h-full mt-14 md:mt-0 justify-center"
       transition:name="navbar"
     >
-      <div class="flex flex-row justify-center">
+      <div class="flex flex-row justify-center items-center h-full">
         {
           navbarLinks.map(({ name, href }) => {
             const isExternal = href.startsWith("http");
@@ -72,9 +73,10 @@ const navbarLinks = [
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
                 href={isExternal ? href: translatePath(href)}
-                class="navbar-link"
+                class="navbar-link flex"
               >
                 {name}
+                {isExternal && <ArrowLink />}
               </a>
             );
           })

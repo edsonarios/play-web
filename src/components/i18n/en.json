@@ -6,7 +6,9 @@
         "github": "GitHub",
         "contact": "Contact"
     },
-    "download": "Download Free",
+    "download": "Download",
+    "downloadIn": "Download in",
+    "downloadInWindows": "Download in windows",
     "header": {
         "title": "Modern Music Player",
         "subtitle": "Desktop Application",

@@ -1,12 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../Header.astro";
-import ButtonWindows from "../ButtonWindows.astro";
+import ButtonDownload from "../ButtonDownload.astro";
 import MainFeatures from "../MainFeatures/MainFeatures.astro";
 import OtherPlatforms from "../OtherPlatforms.astro";
 import VisitDocs from "../VisitDocs.astro";
 import Bg from "../Bg.astro";
-import Footer from "../Footer.astro";
+import Footer from "../footer/Footer.astro";
 import { getI18N } from "../i18n/index.ts"
 import Navbar from "../NavBar/Navbar.astro";
 
@@ -18,7 +18,7 @@ const i18n = getI18N({ currentLocale })
   <Bg />
   <Navbar />
   <Header />
-  <ButtonWindows />
+  <ButtonDownload />
   <OtherPlatforms />
   <MainFeatures />
   <VisitDocs />
